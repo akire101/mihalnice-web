@@ -6,768 +6,404 @@
     <title>Lash Masterclass - Premium Lash Artistry Kurz</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* === CRITICAL REDESIGN - LIGHT LUXURY SHOWCASE STYLE === */
+        /* === LIGHT LUXURY SHOWCASE STYLE - PREMIUM GILDED DARK THEME === */
         
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,600;1,700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;600;700&display=swap');
 
         :root {
-            --primary: #667eea;
-            --secondary: #764ba2;
-            --accent: #fd79a8;
-            --gold: #d4af37;
-            --dark-bg: #0d132c;
-            --dark-card: rgba(10, 15, 46, 0.95);
-            --text-primary: #f7f9fc;
-            --text-secondary: rgba(247, 249, 252, 0.85);
-            --text-muted: rgba(247, 249, 252, 0.6);
-            --radius-sm: 12px;
-            --radius-md: 24px;
-            --radius-lg: 32px;
-            --space-xs: 0.5rem;
-            --space-sm: 1rem;
-            --space-md: 1.75rem;
-            --space-lg: 2.5rem;
-            --space-xl: 4rem;
-            --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.3);
-            --shadow-md: 0 8px 25px rgba(0, 0, 0, 0.4);
-            --shadow-lg: 0 12px 40px rgba(102, 126, 234, 0.2);
-            --shadow-xl: 0 20px 60px rgba(102, 126, 234, 0.25);
-            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --gradient-accent: linear-gradient(135deg, #fd79a8 0%, #ff758c 100%);
-            --gradient-gold: linear-gradient(135deg, #d4af37 0%, #f5e06e 100%);
+            /* === LUXURY PALETTE - GILDED DARK THEME === */
+            --primary: #1a1a1a;        /* Tmavé zlate (namiesto modrej) */
+            --secondary: #2d2d2d;      /* Hlboké antracitové */
+            --tertiary: #0f0f0f;       /* Čierno-hnedé tóny */
+            
+            /* === LUXURY ACCENTS - GILDED GOLD THEME === */
+            --gold-primary: #D4AF37;   /* Luxusné zlate */
+            --gold-secondary: #C5A028; /* Tmavšie zlate */
+            --gold-accent: #E6C873;    /* Svietiace zlate */
+            
+            /* === DEEP LUXURY GRADIENTS === */
+            --gradient-gold-dark: linear-gradient(135deg, #D4AF37 0%, #C5A028 50%, #B8962E 100%);
+            --gradient-luxury-deep: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #0f0f0f 100%);
+            --gradient-gold-embellish: linear-gradient(135deg, #E6C873 0%, #D4AF37 100%);
+            
+            /* === TEXT COLORS - LUXURY PALETTE === */
+            --text-primary: #f5f5f5;   /* Biele pre hlavný text */
+            --text-secondary: rgba(245, 245, 245, 0.85);     /* Tmavšie biele */
+            --text-muted: rgba(245, 245, 245, 0.6);          /* Muted text */
+            --text-gold: #D4AF37;      /* Zlatý text pre akcenty */
+            
+            /* === SPACES & RADIUS - LUXURY PROPORTIONS === */
+            --space-xs: 0.5rem;        /* Kompaktné priestory */
+            --space-sm: 1rem;          /* Stredné priestory */
+            --space-md: 2rem;          /* Veľké priestory */
+            --space-lg: 3rem;          /* Extra veľké priestory */
+            --space-xl: 5rem;          /* Luxury spacing */
+            
+            /* === LUXURY SHADOWS - EMBELLISHED === */
+            --shadow-gold-sm: 0 4px 12px rgba(212, 175, 55, 0.15);   /* Zlaté tieňovanie */
+            --shadow-gold-md: 0 8px 25px rgba(212, 175, 55, 0.2);    /* Stredné zlaté tieňovanie */
+            --shadow-gold-lg: 0 16px 45px rgba(212, 175, 55, 0.25);  /* Veľké zlaté tieňovanie */
+            --shadow-gold-xl: 0 24px 65px rgba(212, 175, 55, 0.3);   /* Luxury shadow */
+            
+            /* === BUTTONS - LUXURY GOLD GRADIENTS === */
+            --btn-primary-gradient: linear-gradient(135deg, #D4AF37 0%, #C5A028 100%);
+            --btn-primary-hover: linear-gradient(135deg, #E6C873 0%, #D4AF37 100%);
+            --btn-secondary-gradient: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+            
+            /* === NAVBAR - LUXURY DARK GOLD === */
+            --navbar-bg: rgba(15, 15, 15, 0.98);
+            --navbar-border: 1px solid rgba(212, 175, 55, 0.3);
+            
+            /* === RADIUS - LUXURY SOFT CORNERS === */
+            --radius-sm: 16px;         /* Soft corners */
+            --radius-md: 24px;         /* Premium soft */
+            --radius-lg: 32px;         /* Luxury rounded */
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            line-height: 1.7;
-            color: var(--text-primary);
-            background: linear-gradient(135deg, #0a0f2e 0%, #1a344f 50%, #0d132c 100%);
-            overflow-x: hidden;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 var(--space-md);
-        }
-
-        /* === NAVIGATION - PREMIUM STYLE === */
-        .navbar {
-            position: fixed;
-            top: 0; left: 0; right: 0;
-            z-index: 1000;
-            background: rgba(10, 15, 46, 0.98);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(102, 126, 234, 0.2);
-            padding: 1.2rem 0;
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 var(--space-md);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo { 
-            font-family: 'Playfair Display', serif; 
-            font-size: 1.8rem; 
-            font-weight: 700; 
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            letter-spacing: -0.5px;
-        }
-
-        .nav-links { display: flex; list-style: none; gap: 1rem; align-items: center; }
-
-        .nav-links li a {
-            color: var(--text-primary);
-            font-weight: 500;
-            padding: 0.75rem 1.5rem;
-            border-radius: var(--radius-sm);
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            letter-spacing: 0.5px;
-        }
-
-        .nav-links li a:hover, .nav-links li a.active { 
-            background: rgba(102, 126, 234, 0.15);
-            color: white !important;
-            transform: translateY(-2px);
-        }
-
-        /* === HERO SECTION - LIGHT LUXURY SHOWCASE === */
-        .hero-section {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            padding-top: 160px;
-            background: linear-gradient(135deg, rgba(10,15,46,0.95), rgba(26,52,79,0.9));
-            overflow: hidden;
-        }
-
-        /* Hero background decoration */
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: radial-gradient(circle at 20% 80%, rgba(102, 126, 234, 0.15) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 20%, rgba(116, 75, 162, 0.1) 0%, transparent 50%);
-            pointer-events: none;
-        }
-
-        .hero-content {
-            position: relative;
-            text-align: left;
-            max-width: 800px;
-            padding: var(--space-lg);
-            margin: 0 auto;
-            z-index: 2;
-        }
-
-        .hero-title {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2.5rem, 5vw, 4rem) !important;
-            font-weight: 700 !important;
-            line-height: 1.1 !important;
-            background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 100%) !important;
-            -webkit-background-clip: text !important;
-            -webkit-text-fill-color: transparent !important;
-            margin-bottom: var(--space-md) !important;
-            letter-spacing: -1px;
-        }
-
-        .hero-subtitle { 
-            font-size: clamp(1rem, 2.5vw, 1.3rem) !important; 
-            color: var(--text-secondary) !important; 
-            margin-bottom: var(--space-lg) !important; 
-            line-height: 1.6;
-            max-width: 700px;
-        }
-
-        .hero-buttons { 
-            display: flex; 
-            gap: var(--space-md); 
-            justify-content: center; 
-            align-items: stretch;
-            flex-wrap: wrap; 
-            margin-top: var(--space-lg); 
-        }
-
-        /* === PERFECT BUTTON ALIGNMENT - LUXURY STYLE === */
-        .cta-button {
-            min-height: 60px !important;
-            min-width: 220px !important;
-            max-width: 280px;
-            text-align: center !important;
-            padding: 1.3rem 2.5rem !important; 
-            font-size: 1rem !important;
-            font-weight: 600 !important;
-            letter-spacing: 0.5px;
-            cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            border-radius: var(--radius-md);
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 12px 35px rgba(102, 126, 234, 0.4);
-        }
-
-        .cta-button-primary {
-            background: var(--gradient-primary) !important;
-            color: white !important;
-            border: none !important;
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
-        }
-
-        .cta-button-primary:hover {
-            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%) !important;
-        }
-
-        .cta-button-secondary {
-            background: transparent !important;
-            color: white !important;
-            border: 2px solid rgba(102, 126, 234, 0.5) !important;
-            backdrop-filter: blur(10px);
-        }
-
-        .cta-button-secondary:hover {
-            background: rgba(102, 126, 234, 0.1) !important;
-            border-color: #667eea !important;
-        }
-
-        .social-proof-badges {
-            display: flex;
-            justify-content: center;
-            gap: var(--space-md);
-            flex-wrap: wrap;
-            margin-top: var(--space-lg);
-        }
-
-        .social-proof-badges span { 
-            color: var(--text-muted); 
-            font-size: 0.9rem; 
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1rem;
-            background: rgba(255,255,255,0.05);
-            border-radius: var(--radius-sm);
-        }
-
-        /* === HERO IMAGE - LUXURY STYLE === */
-        .hero-image-container {
-            margin-bottom: var(--space-lg);
-            opacity: 0;
-            transition: all 1s ease-out;
-        }
-
-        .hero-image-container.loaded {
-            opacity: 1;
-        }
-
-        .hero-image-wrapper {
-            position: relative;
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.4);
-            border: 1px solid rgba(102, 126, 234, 0.3);
-        }
-
-        .hero-image-main {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: transform 0.5s ease;
-        }
-
-        .hero-image-container:hover .hero-image-main {
-            transform: scale(1.03);
-        }
-
-        /* === ABOUT SECTION - LUXURY STATS === */
-        .about-section { 
-            padding: var(--space-xl) 0; 
-            background: linear-gradient(135deg, rgba(26,52,79,0.9), rgba(10,15,46,0.95)); 
-        }
-
-        .section-title { 
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2rem, 4vw, 3rem);
-            text-align: center; 
-            margin-bottom: var(--space-lg); 
-            color: white;
-            letter-spacing: -1px;
-        }
-
-        .about-stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: var(--space-md);
-            margin-top: var(--space-lg);
-            max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
-            padding: 0 var(--space-md);
-        }
-
-        .stat-card {
-            text-align: center;
-            padding: var(--space-md);
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(116, 75, 162, 0.05) 100%);
-            border: 1px solid rgba(102, 126, 234, 0.3);
-            border-radius: var(--radius-md);
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-        }
-
-        .stat-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
-        }
-
-        .stat-number { 
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2rem, 5vw, 3rem); 
-            font-weight: 700 !important; 
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            display: block;
-            line-height: 1.2;
-        }
-
-        .stat-label { color: var(--text-secondary); font-size: 0.9rem; margin-top: var(--space-xs); letter-spacing: 0.5px; }
-
-        /* === FAQ SECTION - LUXURY ACCORDION === */
-        .faq-section { 
-            padding: var(--space-xl) 0; 
-            background: linear-gradient(135deg, rgba(26,52,79,0.9), rgba(10,15,46,0.95)); 
-        }
-
-        .faq-item {
-            background: rgba(10, 15, 46, 0.8);
-            border-radius: var(--radius-md);
-            margin-bottom: var(--space-md);
-            overflow: hidden;
-            border: 1px solid rgba(102, 126, 234, 0.2);
-        }
-
-        .faq-question {
-            padding: var(--space-md);
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: white;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-        }
-
-        .faq-question:hover { background: rgba(102, 126, 234, 0.1); }
-
-        .faq-answer {
-            padding: 0 var(--space-md);
-            max-height: 0;
-            overflow: hidden;
-            transition: all 0.4s ease;
-            color: var(--text-secondary);
-            line-height: 1.8;
-        }
-
-        .faq-item.active .faq-answer {
-            padding: var(--space-md) var(--space-md) var(--space-md) var(--space-md);
-            max-height: 200px;
-        }
-
-        /* === PRICING SECTION - LUXURY CARD === */
-        .pricing-section { 
-            padding: var(--space-xl) 0; 
-            background: linear-gradient(135deg, rgba(10,15,46,0.8), rgba(26,52,79,0.95)); 
-        }
-
-        .pricing-card {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: var(--space-xl);
-            background: linear-gradient(135deg, rgba(10, 15, 46, 0.95), rgba(26, 52, 79, 0.98));
-            border-radius: var(--radius-lg);
-            text-align: center;
-            border: 2px solid rgba(102, 126, 234, 0.3);
-            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.3);
-        }
-
-        .price-tag { 
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2.5rem, 6vw, 4.5rem) !important; 
-            font-weight: 700 !important; 
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: var(--space-md);
-        }
-
-        /* === TESTIMONIALS SECTION === */
-        .testimonials-section { 
-            padding: var(--space-xl) 0; 
-            background: linear-gradient(135deg, rgba(26,52,79,0.9), rgba(10,15,46,0.95)); 
-        }
-
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: var(--space-lg);
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 var(--space-md);
-        }
-
-        .testimonial-card {
-            background: rgba(10, 15, 46, 0.8);
-            border-radius: var(--radius-md);
-            padding: var(--space-lg);
-            border: 1px solid rgba(102, 126, 234, 0.2);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .testimonial-card:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 20px 50px rgba(102, 126, 234, 0.3);
-            border-left-color: #764ba2;
-        }
-
-        .testimonial-text {
-            font-style: italic;
-            color: var(--text-secondary);
-            margin-bottom: var(--space-md);
-            line-height: 1.8;
-        }
-
-        .testimonial-author {
-            font-weight: 600;
-            color: white;
-            font-family: 'Playfair Display', serif;
-        }
-
-        /* === FOOTER === */
-        .footer { 
-            background: #0d132c; 
-            padding: var(--space-xl) 0; 
-            text-align: center; 
-            color: var(--text-muted);
-            border-top: 1px solid rgba(102, 126, 234, 0.2);
-        }
-
-        /* === ANIMATED COUNTERS & SCROLL ANIMATIONS === */
-        .stat-number.animated-counter { transition: all 0.5s ease; }
-        
-        /* === SCROLL-TRIGGERED FADE-IN ANIMATIONS === */
-        .fade-up { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1); }
-        .fade-up.visible { opacity: 1; transform: translateY(0); }
-        
-        .delay-200 { transition-delay: 0.2s; }
-        .delay-400 { transition-delay: 0.4s; }
-        .delay-600 { transition-delay: 0.6s; }
-        .delay-800 { transition-delay: 0.8s; }
-        
-        /* === PARALLAX EFFECTS === */
-        .parallax-wrapper { overflow: hidden; perspective: 1000px; }
-        .parallax-decoration { position: relative; z-index: 1; }
-        .floating-element { animation: float 8s ease-in-out infinite; }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(5deg); }
-        }
-
-        /* === RESPONSIVE DESIGN === */
-        @media (max-width: 768px) {
-            .hero-title { font-size: 2rem !important; }
-            .hero-buttons { flex-direction: column; }
-            .cta-button { min-width: 100% !important; }
-            .nav-links { display: none; } /* Mobile menu - can be expanded */
-        }
-
-        @media (max-width: 480px) {
-            .hero-title { font-size: 1.75rem !important; }
-            .section-title { font-size: 1.8rem !important; }
-        }
-    </style>
-</head>
-<body>
-    <!-- Navigation - Premium Style -->
-    <header class="navbar">
-        <div class="container nav-container">
-            <a href="#" class="logo">MihalniceWeb</a>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="#home" class="nav-link active">Domov</a></li>
-                    <li><a href="#about" class="nav-link">O kurze</a></li>
-                    <li><a href="#evaluations" class="nav-link">Vyhodnotenia</a></li>
-                    <li><a href="#pricing" class="nav-link">Cena</a></li>
-                    <li><a href="#faq" class="nav-link">FAQ</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Hero Section - Light Luxury Showcase with Scroll Animations -->
-    <section id="home" class="hero-section">
-        <div class="container">
-            <!-- Hero Image - SCROLL-TRIGGERED FADE-IN with Parallax -->
-            <div class="hero-image-container fade-up">
-                <div class="hero-image-wrapper parallax-wrapper">
-                    <img 
-                        src="https://v3b.fal.media/files/b/0aa9e3d3/K9SV2kugp_zfK1M4NOPHS_9LodF1hB.png"
-                        alt="Lash Artistry Mastery - Premium Course"
-                        class="hero-image-main"
-                    >
-                </div>
-            </div>
-
-            <div class="hero-content">
-                <h1 class="hero-title fade-up delay-200">Staneš sa profesionálnym lash technikom</h1>
-                
-                <p class="hero-subtitle fade-up delay-400">
-                    Vysokej úrovne certifikát získate už za 87 hodín. Naučíte sa pokročilé techniky, ktoré vám prinesú extra 500€ za každého klienta a zabezpečí vysokú úroveň kompetencie v špecializovanej liah indústrii.
-                </p>
-
-                <div class="hero-buttons fade-up delay-600">
-                    <a href="#pricing" class="cta-button cta-button-primary">Získaj kurz teraz</a>
-                    <a href="#about" class="cta-button cta-button-secondary">Viac informácií</a>
-                </div>
-
-                <div class="social-proof-badges fade-up delay-800">
-                    <span>✓ Online kurz</span>
-                    <span>✓ Živý mentoring</span>
-                    <span>✓ Certifikát</span>
-                    <span>✓ Flexibilné termíny</span>
-                    <span>✓ Profesionálne materiály</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Parallax Background Decoration -->
-        <div class="parallax-decoration">
-            <div class="floating-element" style="position: absolute; top: 20%; left: 10%; width: 200px; height: 200px; background: radial-gradient(circle, rgba(102,126,234,0.15) 0%, transparent 70%); border-radius: 50%;"></div>
-            <div class="floating-element" style="position: absolute; top: 15%; right: 15%; width: 150px; height: 150px; background: radial-gradient(circle, rgba(116,75,162,0.1) 0%, transparent 70%); border-radius: 50%;"></div>
-            <div class="floating-element" style="position: absolute; bottom: 20%; left: 20%; width: 180px; height: 180px; background: radial-gradient(circle, rgba(253,121,168,0.08) 0%, transparent 70%); border-radius: 50%;"></div>
-        </div>
-    </section>
-
-    <!-- About Section - Premium Stats -->
-    <section id="about" class="about-section">
-        <div class="container">
-            <h2 class="section-title">O kurze</h2>
-            
-            <div class="about-stats">
-                <div class="stat-card" data-aos="fade-up">
-                    <span class="stat-number animated-counter" data-target="1500" data-prefix="€">0</span>
-                    <span class="stat-label">Priemerne zarobené za študenta</span>
-                </div>
-
-                <div class="stat-card" data-aos="fade-up">
-                    <span class="stat-number animated-counter" data-target="98">0</span>
-                    <span class="stat-label">Percento uspokojených klientov</span>
-                </div>
-
-                <div class="stat-card" data-aos="fade-up">
-                    <span class="stat-number animated-counter" data-target="45">0</span>
-                    <span class="stat-label">Minimálna dĺžka kurzov (hodín)</span>
-                </div>
-
-                <div class="stat-card" data-aos="fade-up">
-                    <span class="stat-number animated-counter" data-target="3000">0</span>
-                    <span class="stat-label">Spokojných absolventov</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section - Premium Accordion -->
-    <section id="faq" class="faq-section">
-        <div class="container">
-            <h2 class="section-title">Časté otázky</h2>
-            
-            <div style="max-width: 800px; margin: 0 auto;">
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFAQ(this)">
-                        <span>Ako prebieha kurz?</span>
-                        <span style="font-size: 1.5rem;">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Kurz prebieha online s živým mentoringom. Teoretické časti sú k dispozícii online, praktické cvičenia môžete vykonávať sami alebo v salónoch. Máte neobmedzený prístup ku všetkým materiálom.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFAQ(this)">
-                        <span>Ako dlho trvá kurz?</span>
-                        <span style="font-size: 1.5rem;">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Kurz trvá 87 hodín a môžete ho absolvovať vo vlastnom tempu, pričom máte prístup k materiálom neobmedzený čas. Ideálne riešenie pre zaneprázdnených profesionálov.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFAQ(this)">
-                        <span>Certifikát je uznávaný?</span>
-                        <span style="font-size: 1.5rem;">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Áno, certifikát je vysokej úrovne a uznávaný v celom svete. Otvára vám dvere do profesionálnej liah indústrii a zvyšuje vašu trhovú hodnotu.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFAQ(this)">
-                        <span>Komu je kurz určený?</span>
-                        <span style="font-size: 1.5rem;">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Kurz je ideálny pre štartérov aj profesionálov, ktorí chcú zoskupiť svoje zručnosti. Nevyžaduje sa predchádzajúca skúsenosť - všetko vám priblížime od začiatku.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing Section - Premium Card -->
-    <section id="pricing" class="pricing-section">
-        <div class="container">
-            <h2 class="section-title">Investícia do vašej kariéry</h2>
-            
-            <div class="pricing-card">
-                <h3 style="font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: var(--space-md); color: white;">Completný Lash Masterclass Kurz</h3>
-                <div class="price-tag animated-counter" data-counted="0" data-prefix="€">0</div>
-                <p style="margin-bottom: var(--space-lg); color: var(--text-secondary); font-size: 1.1rem;">Získajte prémiovú edukáciu a profesionálne zručnosti už dnes!</p>
-                
-                <a href="#" class="cta-button cta-button-primary" style="padding: 1.3rem 3rem; width: 100%; margin-top: var(--space-md);">Objednať kurz teraz</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="evaluations" class="testimonials-section">
-        <div class="container">
-            <h2 class="section-title">Čo hovoria naši študenti</h2>
-            
-            <div class="testimonial-grid">
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"Tento kurz úplne zmenil moju kariéru. Za 87 hodín som sa naučila všetko, čo som potrebovala k profesionálnej práci."</p>
-                    <p class="testimonial-author">- Martina K., certifikovaná lash technician</p>
-                </div>
-
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"Profesionálne materiály a živý mentoring sú neporovnateľné. Už som si našla svojich prvých klientov!"</p>
-                    <p class="testimonial-author">- Zuzana P., salónová majiteľka</p>
-                </div>
-
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"Najlepšia investícia, ktorú som urobila. Kurz je štruktúrovaný, jasný a veľmi podnetný."</p>
-                    <p class="testimonial-author">- Andrea R., štartup v liah indústrii</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <p style="font-family: 'Playfair Display', serif; font-size: 1.2rem; margin-bottom: var(--space-sm);">MihalniceWeb</p>
-        <p style="color: var(--text-muted);">&copy; 2024 MihalniceWeb. Všetky práva vyhradené.</p>
-        <div style="margin-top: var(--space-md); display: flex; gap: 1rem; justify-content: center;">
-            <a href="#" style="color: var(--text-secondary); text-decoration: none;">Privacy Policy</a>
-            <a href="#" style="color: var(--text-secondary); text-decoration: none;">Terms of Service</a>
-            <a href="#" style="color: var(--text-secondary); text-decoration: none;">Contact</a>
-        </div>
-    </footer>
-
-    <script>
-        // === FAQ ACCORDION LOGIC - SMOOTH ANIMATIONS ===
-        function toggleFAQ(element) {
-            const item = element.parentElement;
-            const answer = item.querySelector('.faq-answer');
-            const icon = element.querySelector('span:last-child');
-            
-            document.querySelectorAll('.faq-item').forEach(otherItem => {
-                if (otherItem !== item) {
-                    otherItem.classList.remove('active');
-                    otherItem.querySelector('.faq-answer').style.maxHeight = '0';
-                }
-            });
-
-            if (item.classList.contains('active')) {
-                item.classList.remove('active');
-                answer.style.maxHeight = '0';
-                icon.textContent = '+';
-            } else {
-                item.classList.add('active');
-                answer.style.maxHeight = answer.scrollHeight + 'px';
-                icon.textContent = '-';
-            }
-        }
-
-        // === COUNTER ANIMATION LOGIC - PREMIUM STYLE ===
-        const counters = document.querySelectorAll('.animated-counter');
-        const speed = 2000;
-        let hasAnimated = false;
-
-        const animateCounters = () => {
-            counters.forEach(counter => {
-                const updateCount = () => {
-                    const target = +counter.getAttribute('data-target');
-                    const count = +counter.innerText.replace(/[^0-9]/g, '');
-                    const inc = target / (speed / 30);
-
-                    if (count < target) {
-                        counter.innerText = Math.ceil(count + inc).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") + (counter.getAttribute('data-suffix') || '');
-                        setTimeout(updateCount, 30);
-                    } else {
-                        counter.innerText = target.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") + (counter.getAttribute('data-prefix') || '') + (counter.getAttribute('data-suffix') || '');
-                    }
-                };
-                updateCount();
-            });
-        };
-
-        // === INTERSECTION OBSERVER FOR COUNTERS - THRESHOLD 0.1 ===
-        const observerOptions = { threshold: 0.1 };
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting && !hasAnimated) {
-                    animateCounters();
-                    hasAnimated = true;
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.stat-card').forEach(card => {
-            observer.observe(card);
-        });
-
-        // === SMOOTH SCROLLING WITH MODERN API ===
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                    
-                    // Add temporary class for navbar scroll effect
-                    document.querySelector('.navbar').style.background = 'rgba(10, 15, 46, 0.98)';
-                }
-            });
-        });
-
-        // === NAVBAR SCROLL EFFECT ===
-        window.addEventListener('scroll', () => {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 100) {
-                navbar.style.background = 'rgba(10, 15, 46, 0.98)';
-                navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.3)';
-            } else {
-                navbar.style.background = 'rgba(10, 15, 46, 0.95)';
-                navbar.style.boxShadow = 'none';
-            }
-        });
-
-        // === HERO IMAGE LOAD ANIMATION ===
-        window.addEventListener('load', () => {
-            const heroImage = document.querySelector('.hero-image-container');
-            if (heroImage) {
-                heroImage.classList.add('loaded');
-            }
-        });
-
-        // === SCROLL REVEAL OBSERVER FOR FADE-UP ANIMATIONS ===
-        const revealOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    // Stop observing once revealed
-                    revealObserver.unobserve(entry.target);
-                }
-            });
-        }, revealOptions);
-
-        document.querySelectorAll('.fade-up').forEach(element => {
-            revealObserver.observe(element);
-        });
-    </script>
-</body>
-</html>
+        html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'Lato', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.7;
+    color: var(--text-primary);
+    background: var(--gradient-luxury-deep);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+}
+
+/* === LUXURY HEADER - GOLD EMBELLISHED === */
+.header-gold {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    background: var(--navbar-bg);
+    backdrop-filter: blur(20px);
+    border-bottom: var(--navbar-border);
+    box-shadow: var(--shadow-gold-sm);
+    transition: all 0.4s ease;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem var(--space-md);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* === LUXURY LOGO - GILDED TEXT === */
+.logo-luxury { 
+    font-family: 'Cinzel', serif; 
+    font-size: 2rem; 
+    font-weight: 800; 
+    color: var(--gold-primary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: var(--shadow-gold-sm);
+    background: var(--gradient-gold-dark);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* === NAVIGATION LINKS - LUXURY STYLE === */
+.nav-links { display: flex; list-style: none; gap: 1.5rem; align-items: center; }
+
+.nav-links li a {
+    color: var(--text-primary);
+    font-weight: 600;
+    padding: 0.875rem 1.5rem;
+    border-radius: var(--radius-sm);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    background: transparent;
+}
+
+.nav-links li a:hover, .nav-links li a.active { 
+    background: rgba(212, 175, 55, 0.15);
+    color: var(--gold-primary) !important;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    box-shadow: var(--shadow-gold-sm);
+}
+
+/* === LUXURY BUTTONS - GOLD GRADIENT === */
+.btn-luxury {
+    display: inline-block;
+    background: var(--btn-primary-gradient);
+    color: #1a1a1a !important;
+    padding: 1rem 2.5rem;
+    border-radius: var(--radius-md);
+    font-weight: 700;
+    text-align: center;
+    box-shadow: var(--shadow-gold-lg);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: none;
+    cursor: pointer;
+    min-width: 200px !important; /* Fix pre zarovnanie */
+    max-width: 280px;
+}
+
+.btn-luxury:hover { 
+    background: var(--btn-primary-hover);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: var(--shadow-gold-xl);
+}
+
+/* === RESPONSIVE BUTTON LAYOUT FIX === */
+.hero-buttons-container {
+    display: flex !important;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.btn-luxury {
+    min-width: auto !important; /* Override pre flex layout */
+    flex: 1;
+    max-width: calc(50% - 1.5rem); /* Max 2 buttons per row */
+}
+
+@media (max-width: 768px) {
+    .btn-luxury { max-width: 100%; }
+}
+
+/* === HERO SECTION - LUXURY DARK GOLD === */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding-top: 120px;
+    background: var(--gradient-luxury-deep);
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 900px;
+    padding: var(--space-xl);
+    z-index: 2;
+}
+
+/* === LUXURY TYPOGRAPHY - CINCAL & PLAYFAIR DISPLAY === */
+.hero-title-gilded {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    color: var(--gold-primary);
+    margin-bottom: var(--space-lg);
+    line-height: 1.1;
+    text-shadow: var(--shadow-gold-md);
+}
+
+.hero-subtitle { 
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    color: var(--text-secondary); 
+    margin-bottom: var(--space-lg);
+    font-style: italic;
+}
+
+/* === ABOUT SECTION - LUXURY DARK === */
+.about-section { padding: var(--space-xl) 0; background: rgba(15, 15, 15, 0.8); }
+
+.section-title-gilded { 
+    font-family: 'Cinzel', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    text-align: center;
+    margin-bottom: var(--space-lg);
+    color: var(--gold-primary);
+    text-shadow: var(--shadow-gold-sm);
+}
+
+/* === ABOUT COURSE IMAGE - FIXED FOR MOBILE === */
+.about-course-content {
+    max-width: 100%;
+    overflow-x: auto; /* Horizontal scroll for small screens */
+    position: relative;
+}
+
+.about-course-content > div {
+    min-width: 600px; /* Maintain aspect ratio on larger screens */
+    padding: var(--space-md);
+}
+
+/* === TESTIMONIALS - LUXURY CARDS === */
+.testimonials-section { padding: var(--space-xl) 0; background: rgba(26, 26, 26, 0.9); }
+
+.testimonial-container {
+    max-width: 100%;
+    overflow-x: auto;
+    position: relative;
+}
+
+.testimonial-card {
+    min-width: calc(33.333% - 2rem); /* 3 cards per row desktop */
+    padding: var(--space-lg) var(--space-md);
+    background: rgba(40, 40, 40, 0.8);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: var(--radius-md);
+    margin-right: 1rem;
+    transition: all 0.4s ease;
+}
+
+.testimonial-card:hover {
+    border-color: var(--gold-primary);
+    box-shadow: var(--shadow-gold-lg);
+    transform: translateY(-5px);
+}
+
+@media (max-width: 768px) {
+    .testimonial-card { min-width: calc(100% - 1rem); margin-right: 0.5rem; }
+}
+
+/* === PRICING SECTION - LUXURY DARK GOLD === */
+.pricing-section { padding: var(--space-xl) 0; background: rgba(15, 15, 15, 0.9); }
+
+/* === COUNTERS - LUXURY ANIMATION === */
+.counter-section { padding: var(--space-lg) 0; background: rgba(26, 26, 26, 0.8); }
+
+/* === FAQ SECTION - LUXURY ACCORDION === */
+.faq-section { padding: var(--space-xl) 0; background: rgba(15, 15, 15, 0.95); }
+
+.faq-item {
+    margin-bottom: 1rem;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+
+.faq-question {
+    width: 100%;
+    padding: 2rem var(--space-md);
+    background: rgba(40, 40, 40, 0.8);
+    border: none;
+    cursor: pointer;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--gold-primary);
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-question::after {
+    content: '+';
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+.faq-item.active .faq-question::after {
+    content: '−';
+}
+
+/* === FOOTER - LUXURY GOLD === */
+.footer-gilded {
+    background: rgba(10, 10, 10, 0.98);
+    padding: var(--space-lg) 0;
+    border-top: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--space-md) var(--space-md);
+    text-align: center;
+}
+
+.footer-logo-gilded {
+    font-family: 'Cinzel', serif;
+    font-size: 1.5rem;
+    color: var(--gold-primary);
+    margin-bottom: var(--space-sm);
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: var(--space-md);
+}
+
+.footer-link {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.footer-link:hover {
+    color: var(--gold-primary);
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+
+/* === MOBILE RESPONSIVE - FIXED === */
+@media (max-width: 992px) {
+    .header-content {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .logo-luxury { text-align: center; }
+}
+
+@media (max-width: 768px) {
+    .nav-links li a { padding: 0.75rem 1rem; font-size: 0.8rem; }
+    .hero-title-gilded { font-size: 2rem; }
+    
+    /* Testimonials stacked on mobile */
+    .testimonial-card { min-width: 100%; margin-bottom: 1rem; }
+}
+
+@media (max-width: 480px) {
+    .header-content { padding: 1rem var(--space-sm); }
+    .hero-title-gilded { font-size: 1.8rem; }
+    
+    /* Hero buttons single column on small mobile */
+    .btn-luxury { max-width: 100%; }
+}
+
+/* === ANIMATIONS - LUXURY FADE UP === */
+.fade-up {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* === FLOATING ELEMENTS - LUXURY PARALLAX === */
+.floating-element {
+    position: fixed;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: -1;
+    animation: float 8s infinite ease-in-out;
+}
+
+@keyframes float {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(30px, -30px) scale(1.1); }
+    50% { transform: translate(-20px, 20px) scale(0.9); }
+    75% { transform: translate(20px, 30px) scale(1.05); }
+}
