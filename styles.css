@@ -1,0 +1,382 @@
+/* Lash Masterclass - Dark Theme PREMIUM GILDED GOLD */
+
+:root {
+    /* === LUXURY GILDED GOLD PALETTE === */
+    --primary: #1a1a1a;        /* Tmavé zlate (namiesto modrej) */
+    --secondary: #2d2d2d;      /* Hlboké antracitové */
+    --tertiary: #0f0f0f;       /* Čierno-hnedé tóny */
+    
+    /* === LUXURY ACCENTS - GILDED GOLD THEME === */
+    --gold-primary: #D4AF37;   /* Luxusné zlate */
+    --gold-secondary: #C5A028; /* Tmavšie zlate */
+    --gold-accent: #E6C873;    /* Svietiace zlate */
+    
+    /* === DEEP LUXURY GRADIENTS === */
+    --gradient-gold-dark: linear-gradient(135deg, #D4AF37 0%, #C5A028 50%, #B8962E 100%);
+    --gradient-luxury-deep: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #0f0f0f 100%);
+    --gradient-gold-embellish: linear-gradient(135deg, #E6C873 0%, #D4AF37 100%);
+    
+    /* === TEXT COLORS - LUXURY PALETTE === */
+    --text-primary: #f5f5f5;   /* Biele pre hlavný text */
+    --text-secondary: rgba(245, 245, 245, 0.85);     /* Tmavšie biele */
+    --text-muted: rgba(245, 245, 245, 0.6);          /* Muted text */
+    --text-gold: #D4AF37;      /* Zlatý text pre akcenty */
+    
+    /* === SPACES & RADIUS - LUXURY PROPORTIONS === */
+    --space-xs: 0.5rem;        /* Kompaktné priestory */
+    --space-sm: 1rem;          /* Stredné priestory */
+    --space-md: 2rem;          /* Veľké priestory */
+    --space-lg: 3rem;          /* Extra veľké priestory */
+    --space-xl: 5rem;          /* Luxury spacing */
+    
+    /* === LUXURY SHADOWS - EMBELLISHED === */
+    --shadow-gold-sm: 0 4px 12px rgba(212, 175, 55, 0.15);   /* Zlaté tieňovanie */
+    --shadow-gold-md: 0 8px 25px rgba(212, 175, 55, 0.2);    /* Stredné zlaté tieňovanie */
+    --shadow-gold-lg: 0 16px 45px rgba(212, 175, 55, 0.25);  /* Veľké zlaté tieňovanie */
+    --shadow-gold-xl: 0 24px 65px rgba(212, 175, 55, 0.3);   /* Luxury shadow */
+    
+    /* === BUTTONS - LUXURY GOLD GRADIENTS === */
+    --btn-primary-gradient: linear-gradient(135deg, #D4AF37 0%, #C5A028 100%);
+    --btn-primary-hover: linear-gradient(135deg, #E6C873 0%, #D4AF37 100%);
+    --btn-secondary-gradient: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+    
+    /* === NAVBAR - LUXURY DARK GOLD === */
+    --navbar-bg: rgba(15, 15, 15, 0.98);
+    --navbar-border: 1px solid rgba(212, 175, 55, 0.3);
+    
+    /* === RADIUS - LUXURY SOFT CORNERS === */
+    --radius-sm: 16px;         /* Soft corners */
+    --radius-md: 24px;         /* Premium soft */
+    --radius-lg: 32px;         /* Luxury rounded */
+}
+
+/* Base Styles - Dark Theme Gilded Gold */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'Lato', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.7;
+    color: var(--text-primary);
+    background: var(--gradient-luxury-deep);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+}
+
+/* NAVIGATION */
+
+.navbar {
+    transition: background 0.4s ease, box-shadow 0.4s ease;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    background: var(--navbar-bg);
+    backdrop-filter: blur(20px);
+    border-bottom: var(--navbar-border);
+    box-shadow: var(--shadow-gold-sm);
+    padding: 1rem 0;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-luxury { font-size: 1.8rem; font-weight: 800; color: var(--gold-primary); }
+
+.nav-links { display: flex; list-style: none; gap: var(--space-sm); align-items: center; }
+
+.nav-links li a {
+    color: var(--text-primary);
+    font-weight: 600;
+    padding: 0.875rem 1.5rem;
+    border-radius: var(--radius-sm);
+    transition: all 0.3s ease;
+}
+
+.nav-links li a:hover, .nav-links li a.active { 
+    color: var(--text-primary) !important; 
+    background: rgba(212, 175, 55, 0.15) !important;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    box-shadow: var(--shadow-gold-sm);
+}
+
+/* CTA BUTTONS - FIXED RESPONSIVE */
+.btn-luxury {
+    display: inline-block;
+    background: var(--btn-primary-gradient);
+    color: #1a1a1a !important;
+    padding: 1rem 2.5rem;
+    border-radius: var(--radius-md);
+    font-weight: 700;
+    text-align: center;
+    box-shadow: var(--shadow-gold-lg);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: none;
+    cursor: pointer;
+    min-width: 200px !important; /* Garancia minimálnej šírky pre zarovnanie */
+    max-width: 280px;
+}
+
+.btn-luxury:hover { 
+    background: var(--btn-primary-hover); 
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: var(--shadow-gold-xl);
+}
+
+/* RESPONSIVE BUTTON LAYOUT FIX - MOBILE COMPATIBLE */
+.hero-buttons-container {
+    display: flex !important;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.btn-luxury {
+    min-width: auto !important; /* Override pre flex layout */
+    flex: 1;
+    max-width: calc(50% - 1.5rem); /* Max 2 buttons per row */
+}
+
+@media (max-width: 768px) {
+    .btn-luxury { max-width: 100%; }
+}
+
+/* HERO SECTION - LUXURY DARK GOLD */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding-top: 120px;
+    background: var(--gradient-luxury-deep);
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 900px;
+    padding: var(--space-xl);
+    z-index: 2;
+}
+
+/* LUXURY TYPOGRAPHY - CINCAL & PLAYFAIR DISPLAY */
+.hero-title-gilded {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    color: var(--gold-primary);
+    margin-bottom: var(--space-lg);
+    line-height: 1.1;
+    text-shadow: var(--shadow-gold-md);
+}
+
+.hero-subtitle { 
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.2rem, 4vw, 1.8rem);
+    color: var(--text-secondary); 
+    margin-bottom: var(--space-lg);
+    font-style: italic;
+}
+
+/* ABOUT SECTION - LUXURY DARK */
+.about-section { padding: var(--space-xl) 0; background: rgba(15, 15, 15, 0.8); }
+
+.section-title-gilded { 
+    font-family: 'Cinzel', serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    text-align: center;
+    margin-bottom: var(--space-lg);
+    color: var(--gold-primary);
+    text-shadow: var(--shadow-gold-sm);
+}
+
+/* ABOUT COURSE IMAGE - FIXED FOR MOBILE */
+.about-course-content {
+    max-width: 100%;
+    overflow-x: auto; /* Horizontal scroll for small screens */
+    position: relative;
+}
+
+.about-course-content > div {
+    min-width: 600px; /* Maintain aspect ratio on larger screens */
+    padding: var(--space-md);
+}
+
+/* TESTIMONIALS - LUXURY CARDS */
+.testimonials-section { padding: var(--space-xl) 0; background: rgba(26, 26, 26, 0.9); }
+
+.testimonial-container {
+    max-width: 100%;
+    overflow-x: auto;
+    position: relative;
+}
+
+.testimonial-card {
+    min-width: calc(33.333% - 2rem); /* 3 cards per row desktop */
+    padding: var(--space-lg) var(--space-md);
+    background: rgba(40, 40, 40, 0.8);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: var(--radius-md);
+    margin-right: 1rem;
+    transition: all 0.4s ease;
+}
+
+.testimonial-card:hover {
+    border-color: var(--gold-primary);
+    box-shadow: var(--shadow-gold-lg);
+    transform: translateY(-5px);
+}
+
+@media (max-width: 768px) {
+    .testimonial-card { min-width: calc(100% - 1rem); margin-right: 0.5rem; }
+}
+
+/* PRICING SECTION - LUXURY DARK GOLD */
+.pricing-section { padding: var(--space-xl) 0; background: rgba(15, 15, 15, 0.9); }
+
+/* COUNTERS - LUXURY ANIMATION */
+.counter-section { padding: var(--space-lg) 0; background: rgba(26, 26, 26, 0.8); }
+
+/* FAQ SECTION - LUXURY ACCORDION */
+.faq-section { padding: var(--space-xl) 0; background: rgba(15, 15, 15, 0.95); }
+
+.faq-item {
+    margin-bottom: 1rem;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+
+.faq-question {
+    width: 100%;
+    padding: 2rem var(--space-md);
+    background: rgba(40, 40, 40, 0.8);
+    border: none;
+    cursor: pointer;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--gold-primary);
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-question::after {
+    content: '+';
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+.faq-item.active .faq-question::after {
+    content: '−';
+}
+
+/* FOOTER - LUXURY GOLD */
+.footer-gilded {
+    background: rgba(10, 10, 10, 0.98);
+    padding: var(--space-lg) 0;
+    border-top: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--space-md) var(--space-md);
+    text-align: center;
+}
+
+.footer-logo-gilded {
+    font-family: 'Cinzel', serif;
+    font-size: 1.5rem;
+    color: var(--gold-primary);
+    margin-bottom: var(--space-sm);
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: var(--space-md);
+}
+
+.footer-link {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.footer-link:hover {
+    color: var(--gold-primary);
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+
+/* MOBILE RESPONSIVE - FIXED */
+@media (max-width: 992px) {
+    .header-content {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .logo-luxury { text-align: center; }
+}
+
+@media (max-width: 768px) {
+    .nav-links li a { padding: 0.75rem 1rem; font-size: 0.8rem; }
+    .hero-title-gilded { font-size: 2rem; }
+    
+    /* Testimonials stacked on mobile */
+    .testimonial-card { min-width: 100%; margin-bottom: 1rem; }
+}
+
+@media (max-width: 480px) {
+    .header-content { padding: 1rem var(--space-sm); }
+    .hero-title-gilded { font-size: 1.8rem; }
+    
+    /* Hero buttons single column on small mobile */
+    .btn-luxury { max-width: 100%; }
+}
+
+/* ANIMATIONS - LUXURY FADE UP */
+.fade-up {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* FLOATING ELEMENTS - LUXURY PARALLAX */
+.floating-element {
+    position: fixed;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: -1;
+    animation: float 8s infinite ease-in-out;
+}
+
+@keyframes float {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(30px, -30px) scale(1.1); }
+    50% { transform: translate(-20px, 20px) scale(0.9); }
+    75% { transform: translate(20px, 30px) scale(1.05); }
+}
