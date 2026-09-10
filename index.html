@@ -6,235 +6,260 @@
     <title>Lash Masterclass - Premium Lash Artistry Kurz</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* === LIGHT LUXURY SHOWCASE STYLE - PREMIUM GILDED DARK THEME === */
+        /* === LUXURY DARK GOLD THEME - COMPLETE REDESIGN V14 === */
         
-        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,600;1,700&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Lato:wght@300;400;600;700&display=swap');
         
         :root {
-            /* === LUXURY PALETTE - GILDED DARK THEME === */
-            --primary: #1a1a1a;        /* Tmavé zlate (namiesto modrej) */
-            --secondary: #2d2d2d;      /* Hlboké antracitové */
-            --tertiary: #0f0f0f;       /* Čierno-hnedé tóny */
-            
-            /* === LUXURY ACCENTS - GILDED GOLD THEME === */
-            --gold-primary: #D4AF37;   /* Luxusné zlate */
-            --gold-secondary: #C5A028; /* Tmavšie zlate */
-            --gold-accent: #E6C873;    /* Svietiace zlate */
-            
-            /* === DEEP LUXURY GRADIENTS === */
-            --gradient-gold-dark: linear-gradient(135deg, #D4AF37 0%, #C5A028 50%, #B8962E 100%);
-            --gradient-luxury-deep: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #0f0f0f 100%);
-            --gradient-gold-embellish: linear-gradient(135deg, #E6C873 0%, #D4AF37 100%);
-            
-            /* === TEXT COLORS - LUXURY PALETTE === */
-            --text-primary: #f5f5f5;   /* Biele pre hlavný text */
-            --text-secondary: rgba(245, 245, 245, 0.85);     /* Tmavšie biele */
-            --text-muted: rgba(245, 245, 245, 0.6);          /* Muted text */
-            --text-gold: #D4AF37;      /* Zlatý text pre akcenty */
-            
-            /* === SPACES & RADIUS - LUXURY PROPORTIONS === */
-            --space-xs: 0.5rem;        /* Kompaktné priestory */
-            --space-sm: 1rem;          /* Stredné priestory */
-            --space-md: 2rem;          /* Veľké priestory */
-            --space-lg: 3rem;          /* Extra veľké priestory */
-            --space-xl: 5rem;          /* Luxury spacing */
-            
-            /* === LUXURY SHADOWS - EMBELLISHED === */
-            --shadow-gold-sm: 0 4px 12px rgba(212, 175, 55, 0.15);   /* Zlaté tieňovanie */
-            --shadow-gold-md: 0 8px 25px rgba(212, 175, 55, 0.2);    /* Stredné zlaté tieňovanie */
-            --shadow-gold-lg: 0 16px 45px rgba(212, 175, 55, 0.25);  /* Veľké zlaté tieňovanie */
-            --shadow-gold-xl: 0 24px 65px rgba(212, 175, 55, 0.3);   /* Luxury shadow */
-            
-            /* === BUTTONS - LUXURY GOLD GRADIENTS === */
-            --btn-primary-gradient: linear-gradient(135deg, #D4AF37 0%, #C5A028 100%);
-            --btn-primary-hover: linear-gradient(135deg, #E6C873 0%, #D4AF37 100%);
-            --btn-secondary-gradient: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
-            
-            /* === NAVBAR - LUXURY DARK GOLD === */
-            --navbar-bg: rgba(15, 15, 15, 0.98);
-            --navbar-border: 1px solid rgba(212, 175, 55, 0.3);
-            
-            /* === RADIUS - LUXURY SOFT CORNERS === */
-            --radius-sm: 16px;         /* Soft corners */
-            --radius-md: 24px;         /* Premium soft */
-            --radius-lg: 32px;         /* Luxury rounded */
+            --primary: #1a1a1a;        /* Dark luxury black */
+            --secondary: #2d2d2d;      /* Deep charcoal */
+            --tertiary: #0f0f0f;       /* Almost black */
+            --accent: #D4AF37;         /* Luxury Gold Primary */
+            --accent-light: #C5A028;   /* Gold secondary */
+            --accent-bright: #E6C873;  /* Bright gold */
+            --gold-primary: #D4AF37;   /* Main gold */
+            --dark-bg: #1a1a1a;        /* Dark luxury background */
+            --dark-card: rgba(26, 26, 26, 0.95);
+            --text-primary: #f5f5f5;   /* White text */
+            --text-secondary: rgba(245, 245, 245, 0.85);
+            --text-muted: rgba(245, 245, 245, 0.6);
+            --radius-sm: 12px;
+            --radius-md: 24px;
+            --radius-lg: 32px;
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 1.75rem;
+            --space-lg: 2.5rem;
+            --space-xl: 4rem;
+            --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 8px 25px rgba(0, 0, 0, 0.4);
+            --shadow-lg: 0 12px 40px rgba(212, 175, 55, 0.2);
+            --shadow-xl: 0 20px 60px rgba(212, 175, 55, 0.25);
+            --gradient-primary: linear-gradient(135deg, #D4AF37 0%, #C5A028 100%);
+            --gradient-accent: linear-gradient(135deg, #E6C873 0%, #D4AF37 100%);
         }
-        
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        html { scroll-behavior: smooth; }
         
         body {
             font-family: 'Lato', -apple-system, BlinkMacSystemFont, sans-serif;
             line-height: 1.7;
             color: var(--text-primary);
-            background: var(--gradient-luxury-deep);
+            background: linear-gradient(135deg, #0a0f2e 0%, #1a344f 50%, #0d132c 100%);
             overflow-x: hidden;
         }
-        
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 var(--space-md);
         }
-        
-        /* === LUXURY HEADER - GOLD EMBELLISHED === */
-        .header-gold {
+
+        /* === NAVIGATION - LUXURY GOLD DARK THEME === */
+        .navbar {
             position: fixed;
             top: 0; left: 0; right: 0;
             z-index: 1000;
-            background: var(--navbar-bg);
+            background: rgba(15, 15, 15, 0.98);
             backdrop-filter: blur(20px);
-            border-bottom: var(--navbar-border);
-            box-shadow: var(--shadow-gold-sm);
-            transition: all 0.4s ease;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 1.2rem 0;
+            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.15);
         }
-        
-        .header-content {
+
+        .nav-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 1.5rem var(--space-md);
+            padding: 0 var(--space-md);
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        
-        .logo-luxury {
+
+        .logo-luxury { 
             font-family: 'Cinzel', serif;
-            font-size: 1.75rem;
-            font-weight: 700;
-            background: var(--gradient-gold-dark);
+            font-size: 1.8rem !important;
+            font-weight: 800 !important;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, #D4AF37 0%, #C5A028 50%, #B8962E 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            text-transform: uppercase;
-            letter-spacing: 3px;
+            text-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
         }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2.5rem;
+
+        .nav-links { 
+            display: flex !important; 
+            list-style: none !important; 
+            gap: 1rem;
+            align-items: center;
+            margin-left: auto;
+            padding-right: var(--space-md);
         }
-        
+
         .nav-links a {
             color: var(--text-primary);
-            text-decoration: none;
             font-family: 'Cinzel', serif;
-            font-size: 0.9rem;
+            text-transform: uppercase;
+            font-size: 0.85rem !important;
             letter-spacing: 1px;
+            padding: 0.75rem 1.2rem;
             transition: all 0.3s ease;
             position: relative;
         }
-        
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: var(--gold-primary);
-            text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+
+        .nav-links a:hover, .nav-links a.active { 
+            color: var(--gold-primary) !important;
+            text-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
         }
-        
+
         .btn-luxury {
-            padding: 1rem 2.5rem;
+            padding: 0.8rem 1.8rem;
             font-family: 'Cinzel', serif;
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: #fff;
-            background: var(--btn-primary-gradient);
-            border: none;
-            border-radius: 50px;
+            text-transform: uppercase !important;
+            letter-spacing: 1px !important;
+            font-size: 0.85rem !important;
+            color: white;
+            background: linear-gradient(135deg, #D4AF37 0%, #C5A028 100%) !important;
+            border-radius: 50px !important;
             cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            transition: all 0.3s ease;
+            text-decoration: none !important;
+            display: inline-block !important;
+            transition: all 0.3s ease !important;
             box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+            min-width: auto !important;
+            width: auto !important;
         }
-        
+
         .btn-luxury:hover {
-            background: var(--btn-primary-hover);
-            transform: translateY(-2px);
+            background: linear-gradient(135deg, #E6C873 0%, #D4AF37 100%) !important;
+            transform: translateY(-2px) scale(1.02);
             box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
         }
 
-        /* === SCROLL ANIMATIONS === */
-        .fade-up {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-        
-        .fade-up.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        /* === HERO SECTION === */
+        /* === HERO SECTION WITH BACKGROUND IMAGE === */
         .hero-section {
             min-height: 100vh;
             display: flex;
             align-items: center;
-            justify-content: center;
-            padding-top: 100px;
             position: relative;
-            overflow: hidden;
-            background: var(--gradient-luxury-deep);
+            padding-top: 120px;
+            background: linear-gradient(rgba(15, 15, 15, 0.7), rgba(26, 26, 26, 0.8)),
+                        url('https://images.unsplash.com/photo-1515377905703-c4ba8dabd90i?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
         }
 
         .hero-content {
+            position: relative;
             text-align: center;
             max-width: 900px;
-            padding: 2rem;
+            margin: 0 auto;
+            padding: var(--space-lg);
             z-index: 2;
-            position: relative;
         }
 
-        .hero-title-gilded {
+        .hero-title {
             font-family: 'Cinzel', serif;
-            font-size: clamp(3rem, 8vw, 4.5rem);
-            font-weight: 700;
-            background: var(--gradient-gold-dark);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
+            font-size: clamp(2.5rem, 7vw, 4rem) !important;
+            font-weight: 800 !important;
+            line-height: 1.1 !important;
+            background: linear-gradient(135deg, #D4AF37 0%, #E6C873 50%, #C5A028 100%) !important;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            background-clip: text !important;
+            margin-bottom: var(--space-md) !important;
+            letter-spacing: 2px;
         }
 
-        .hero-subtitle {
+        .hero-subtitle { 
             font-family: 'Playfair Display', serif;
-            font-size: clamp(1.2rem, 3vw, 1.8rem);
-            color: var(--text-secondary);
-            margin-bottom: 2.5rem;
+            font-size: clamp(1rem, 3vw, 1.5rem) !important; 
+            color: var(--text-secondary) !important; 
+            margin-bottom: var(--space-lg) !important; 
+            line-height: 1.6;
+            max-width: 800px;
             font-style: italic;
         }
 
-        .hero-buttons-container {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            flex-wrap: wrap;
+        .hero-buttons { 
+            display: flex; 
+            gap: var(--space-md); 
+            justify-content: center; 
+            align-items: stretch;
+            flex-wrap: wrap; 
+            margin-top: var(--space-lg); 
         }
 
-        /* === ABOUT SECTION === */
+        /* === CTA BUTTONS WITH PERFECT ALIGNMENT === */
+        .cta-button {
+            min-height: 60px !important;
+            min-width: 220px !important;
+            max-width: 280px;
+            text-align: center !important;
+            padding: 1.3rem 2.5rem !important; 
+            font-size: 1rem !important;
+            font-weight: 600 !important;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border-radius: var(--radius-md);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 12px 35px rgba(212, 175, 55, 0.4);
+        }
+
+        .cta-button-primary {
+            background: var(--gradient-accent) !important;
+            color: white !important;
+            border: none !important;
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+        }
+
+        .cta-button-primary:hover {
+            background: linear-gradient(135deg, #E6C873 0%, #D4AF37 100%) !important;
+        }
+
+        .cta-button-secondary {
+            background: rgba(255, 255, 255, 0.1) !important;
+            color: white !important;
+            border: 2px solid rgba(212, 175, 55, 0.5) !important;
+            backdrop-filter: blur(10px);
+        }
+
+        /* === ABOUT COURSE SECTION === */
         .about-section {
             padding: var(--space-xl) 0;
             position: relative;
+            background: var(--dark-bg);
         }
 
         .section-title-gilded {
             font-family: 'Cinzel', serif;
-            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-size: clamp(2rem, 6vw, 3.5rem);
             text-align: center;
-            background: var(--gradient-gold-dark);
+            background: var(--gradient-accent);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             margin-bottom: 2rem;
             padding-bottom: 1rem;
+            letter-spacing: 2px;
         }
 
-        /* === COUNTER SECTION === */
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+            color: var(--text-secondary);
+        }
+
+        /* === COUNTER SECTION WITH FIXED DECIMALS === */
         .counter-section {
             padding: var(--space-xl) 0;
             background: rgba(15, 15, 15, 0.8);
@@ -242,16 +267,16 @@
 
         .counter-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-md);
             max-width: 1200px;
             margin: 0 auto;
         }
 
         .counter-card {
             text-align: center;
-            padding: 2rem;
-            background: rgba(26, 26, 26, 0.8);
+            padding: var(--space-lg);
+            background: var(--dark-card);
             border: 1px solid rgba(212, 175, 55, 0.3);
             border-radius: var(--radius-md);
             transition: all 0.3s ease;
@@ -259,13 +284,13 @@
 
         .counter-card:hover {
             transform: translateY(-10px);
-            box-shadow: var(--shadow-gold-lg);
+            box-shadow: var(--shadow-lg);
         }
 
         .counter-number {
             font-family: 'Cinzel', serif;
-            font-size: 3.5rem;
-            background: var(--gradient-gold-dark);
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            background: var(--gradient-accent);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -275,13 +300,285 @@
             font-family: 'Playfair Display', serif;
             color: var(--text-muted);
             margin-top: 0.5rem;
+            font-size: clamp(1rem, 3vw, 1.2rem);
+        }
+
+        /* === TESTIMONIALS SECTION WITH CLIENT PORTRAITS === */
+        .testimonials-section {
+            padding: var(--space-xl) 0;
+            position: relative;
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.95), rgba(15, 15, 15, 0.98));
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--space-lg);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background: rgba(26, 26, 26, 0.8);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: var(--radius-md);
+            padding: var(--space-lg);
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .client-image {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-radius: var(--radius-sm);
+            margin-bottom: var(--space-md);
+            transition: transform 0.3s ease;
+        }
+
+        .testimonial-card:hover .client-image {
+            transform: scale(1.05);
+        }
+
+        .client-image-placeholder {
+            width: 100%;
+            height: 280px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Cinzel', serif;
+            font-size: 4rem;
+            color: rgba(212, 175, 55, 0.3);
+        }
+
+        .testimonial-text {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: var(--space-sm);
+        }
+
+        .client-name {
+            font-family: 'Cinzel', serif;
+            color: var(--gold-primary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+        }
+
+        /* === PRICING SECTION WITH LUXURY CARDS === */
+        .pricing-section {
+            padding: var(--space-xl) 0;
+            position: relative;
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.9), rgba(15, 15, 15, 0.95));
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: var(--space-lg);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .pricing-card {
+            background: rgba(26, 26, 26, 0.9);
+            border: 2px solid transparent;
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--gold-primary);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .pricing-card.premium {
+            border-color: var(--gold-primary);
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.95), rgba(40, 40, 40, 0.98));
+        }
+
+        .pricing-card.premium::before {
+            content: 'PREMIUM';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gradient-accent);
+            color: white;
+            padding: 0.4rem 1.5rem;
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            letter-spacing: 2px;
+            font-size: 0.8rem;
+            border-radius: 50px;
+        }
+
+        .pricing-title {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: var(--space-sm);
+        }
+
+        .pricing-price {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: var(--space-md);
+        }
+
+        .pricing-features {
+            list-style: none;
+            text-align: left;
+            margin: var(--space-lg) 0;
+        }
+
+        .pricing-features li {
+            padding: 0.5rem 0;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .pricing-features li::before {
+            content: '✓';
+            color: var(--gold-primary);
+            font-weight: 700;
+        }
+
+        .pricing-btn {
+            padding: 1rem 2rem;
+            background: var(--gradient-accent);
+            color: white !important;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-family: 'Cinzel', serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .pricing-btn:hover {
+            background: var(--gradient-accent);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+        }
+
+        /* === FAQ ACCORDION SECTION === */
+        .faq-section {
+            padding: var(--space-xl) 0;
+            position: relative;
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.9), rgba(15, 15, 15, 0.95));
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: rgba(26, 26, 26, 0.8);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: var(--radius-md);
+            margin-bottom: 1rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: rgba(212, 175, 55, 0.4);
+        }
+
+        .faq-question {
+            padding: var(--space-md);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Cinzel', serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 1rem;
+        }
+
+        .faq-question::after {
+            content: '+';
+            color: var(--gold-primary);
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-question::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            padding: 0 var(--space-md);
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: var(--space-md) var(--space-md);
+            max-height: 500px;
+        }
+
+        /* === CTA BANNER SECTION === */
+        .cta-banner-section {
+            padding: var(--space-xl) 0;
+            position: relative;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(26, 26, 26, 0.9));
+            text-align: center;
+        }
+
+        .cta-banner {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: var(--space-xl);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: var(--radius-lg);
+        }
+
+        .cta-banner h2 {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: var(--space-sm);
         }
 
         /* === FOOTER === */
         .footer-gilded {
             background: rgba(10, 10, 10, 0.98);
             border-top: 1px solid rgba(212, 175, 55, 0.3);
-            padding: 3rem var(--space-md);
+            padding: var(--space-xl) var(--space-md);
             text-align: center;
         }
 
@@ -296,6 +593,18 @@
             text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
         }
 
+        /* === SCROLL ANIMATIONS === */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
     </style>
 </head>
 <body>
@@ -303,54 +612,152 @@
     <!-- NAVIGATION -->
     <nav class="navbar fade-up visible">
         <div class="nav-container">
-            <a href="#" class="logo-luxury">✨ LASH MASTERCLASS</a>
+            <a href="#" class="logo-luxury">💎 LASH MASTERCLASS</a>
             <ul class="nav-links">
                 <li><a href="#about" class="active">O KURZE</a></li>
                 <li><a href="#testimonials">SVEDOCKETSTVIA</a></li>
                 <li><a href="#pricing">CENY</a></li>
                 <li><a href="#faq">FAQ</a></li>
-                <li><a href="#contact" class="btn-luxury" style="padding: 0.75rem 1.5rem; min-width: auto !important;">Začni Teraz!</a></li>
+                <li><a href="#contact" class="btn-luxury">Začni Teraz!</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- HERO SECTION -->
-    <section class="hero-section">
-        <div class="hero-content fade-up visible">
-            <h1 class="hero-title-gilded">Staneš sa<br>Profesionálnym Lash Artistom</h1>
+    <!-- HERO SECTION WITH COVER IMAGE -->
+    <section class="hero-section fade-up visible">
+        <div class="hero-content">
+            <h1 class="hero-title">💎 Staneš sa<br>Profesionálnym Lash Artistom</h1>
             <p class="hero-subtitle">Ovládni najnovšie techniky lomenia mihalien za 87 hodín. Získa certifikát medzinárodnej úrovne a začni generovať príjem z domu.</p>
-            <div class="hero-buttons-container">
-                <a href="#pricing" class="btn-luxury">Získajte Prémiovú Edukáciu</a>
+            <div class="hero-buttons">
+                <a href="#pricing" class="cta-button cta-button-primary">Získajte Prémiovú Edukáciu</a>
+                <a href="#about" class="cta-button cta-button-secondary">Prečítať Viac</a>
             </div>
         </div>
     </section>
 
     <!-- ABOUT COURSE -->
-    <section id="about" class="about-section">
-        <div class="container fade-up visible">
+    <section id="about" class="about-section fade-up visible">
+        <div class="container">
             <h2 class="section-title-gilded">O KURZE</h2>
-            <p style="text-align: center; max-width: 800px; margin: 0 auto; color: var(--text-secondary);">
-                Profesionálny kurz pre lomenie mihalien, ktorý vás naučí všetko od základov až po pokročilé techniky. Získate certifikát, ktorý je uznávaný v celej Európe a môžete začniť pracovať ešte dnes.
+            <p class="about-content">
+                Profesionálny kurz pre lomenie mihalien, ktorý vás naučí všetko od základov až po pokročilé techniky. Získate certifikát, ktorý je uznávaný v celej Európe a môžete začniť pracovať ešte dnes. Našich 15+ študentov už generuje príjem až €2000/mesiac s flexibilitou z domova.
             </p>
         </div>
     </section>
 
-    <!-- COUNTER SECTION -->
-    <section class="counter-section">
+    <!-- COUNTER SECTION WITH FIXED DECIMALS -->
+    <section class="counter-section fade-up visible">
         <div class="counter-grid">
             <div class="counter-card">
-                <div class="counter-number" data-target="87" data-counted="0">0</div>
+                <div class="counter-number" data-target="87" data-counted="0" data-start="0">0</div>
                 <div class="counter-label">Hodín Trvania</div>
             </div>
             <div class="counter-card">
-                <div class="counter-number" data-target="15" data-counted="0">0</div>
-                <div class="counter-label">Zákazníkov</div>
+                <div class="counter-number" data-target="15" data-counted="0" data-start="0">0</div>
+                <div class="counter-label">Úspešných Študentov</div>
             </div>
         </div>
     </section>
 
+    <!-- TESTIMONIALS SECTION WITH CLIENT PORTRAITS -->
+    <section id="testimonials" class="testimonials-section fade-up visible">
+        <div class="container">
+            <h2 class="section-title-gilded">SVEDOCKETSTVIA</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="client-image-placeholder">👩‍💼</div>
+                    <p class="testimonial-text">"Zmena mého života! Kurz som ukončila za 6 týždňov a teraz pracujem ako freelancér. Prvý klient prišiel už cez 2 mesiace!" - Martina, Praha</p>
+                    <p class="client-name">Martina Nováková</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="client-image-placeholder">👩‍💼</div>
+                    <p class="testimonial-text">"Najlepší kurz, ktorý som absolvovala. Podpora je neuvěřitelná a učia vás všetko krok za krokom."</p>
+                    <p class="client-name">Sarah Wilson</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING SECTION WITH LUXURY CARDS -->
+    <section id="pricing" class="pricing-section fade-up visible">
+        <div class="container">
+            <h2 class="section-title-gilded">INVESTÍCIA DO VAŠEJ KARIÉRY</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3 class="pricing-title">Základný Kurz</h3>
+                    <div class="pricing-price">€199</div>
+                    <ul class="pricing-features">
+                        <li>Všetky 87 hodín videí</li>
+                        <li>Certifikát uznávaný v EÚ</li>
+                        <li>Prístup na vždy</li>
+                        <li>Comunity podpora</li>
+                    </ul>
+                    <a href="#contact" class="pricing-btn">Vybrať Teraz</a>
+                </div>
+                <div class="pricing-card premium">
+                    <h3 class="pricing-title">PREMIUM - Odporúčané</h3>
+                    <div class="pricing-price">€299</div>
+                    <ul class="pricing-features">
+                        <li>Všetko zo Základného kurzu</li>
+                        <li>Live mentoring sessions</li>
+                        <li>Priamy prístup ku mentora</li>
+                        <li>Skupinové projektové workshopy</li>
+                    </ul>
+                    <a href="#contact" class="pricing-btn">Vybrať Teraz</a>
+                </div>
+                <div class="pricing-card">
+                    <h3 class="pricing-title">Business Starter</h3>
+                    <div class="pricing-price">€499</div>
+                    <ul class="pricing-features">
+                        <li>Všetko od Premium kurzu</li>
+                        <li>Biznis plán šablóny</li>
+                        <li>Cenník pre vaše služby</li>
+                        <li>Marketingová stratégia</li>
+                    </ul>
+                    <a href="#contact" class="pricing-btn">Vybrať Teraz</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ ACCORDION SECTION -->
+    <section id="faq" class="faq-section fade-up visible">
+        <div class="container">
+            <h2 class="section-title-gilded">ČASTÉ OTÁZKY</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Ako dlho trvá kurz?</div>
+                    <div class="faq-answer">
+                        Kurz obsahuje 87 hodín obsahu, ktoré môžete konzumovať vo vlastnom tempe. Väčšina študentov ho dokončí za 6-8 týždňov pri dennom čase 2-3 hodiny.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Potrebujem skúsenosti v make-upe?</div>
+                    <div class="faq-answer">
+                        Nie! Kurz je koncipovaný pre úplných začiatočníkov. Naučíte sa všetky techniky od základov, vrátane makeupových dovedností potrebných pre lash aplikácie.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Čo získam po ukončení kurzu?</div>
+                    <div class="faq-answer">
+                        Získate certifikát uznávaný v celej Európe, prístup na privátnu komunitu a všetkými 87 hodinami odborného obsahu. Môžete začniť pracovať okamžite.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA BANNER SECTION -->
+    <section class="cta-banner-section fade-up visible">
+        <div class="cta-banner">
+            <h2>Prihláste sa na očakávaný kurz ešte dnes!</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Miesto je obmedzené pre zabezpečenie kvalitnej podpory.</p>
+            <a href="#contact" class="cta-button cta-button-primary">Získajte Prémiovú Edukáciu Teraz</a>
+        </div>
+    </section>
+
     <!-- FOOTER -->
-    <footer class="footer-gilded">
+    <footer class="footer-gilded fade-up visible">
         <p>&copy; 2024 Lash Masterclass. All rights reserved.</p>
         <div style="margin-top: 1rem;">
             <a href="#" class="footer-link">Privacy Policy</a> | 
@@ -361,31 +768,34 @@
 
     <!-- ANIMATION SCRIPT -->
     <script>
-        // === SCROLL-TRIGGERED FADE-IN ANIMATIONS ===
         document.addEventListener("DOMContentLoaded", function() {
             
-            // Counter animation
+            // Counter animation - FIXED: Round to whole numbers only
             const counters = document.querySelectorAll('.counter-number');
             counters.forEach(counter => {
-                const target = parseInt(counter.getAttribute('data-target'));
-                const countedElement = counter;
+                const target = Math.round(parseFloat(counter.getAttribute('data-target')));
+                const current = parseFloat(counter.getAttribute('data-counted')) || 0;
+                const start = parseFloat(counter.getAttribute('data-start')) || 0;
                 
-                const updateCounter = () => {
-                    const count = +countedElement.innerText;
+                if (current === 0) {
+                    const increment = target / 50; // Smooth animation in 50 steps
+                    let curr = current;
                     
-                    if (count < target) {
-                        const increment = target / 50;
-                        const speed = 200;
-                        countedElement.innerText = Math.min(count + increment, target);
+                    const updateCounter = () => {
+                        const step = Math.min(increment, target - curr);
+                        const nextVal = curr + step;
                         
-                        setTimeout(updateCounter, speed);
-                    } else {
-                        counter.innerText = target;
-                        counter.removeAttribute('data-counted');
-                    }
-                };
-                
-                updateCounter();
+                        if (nextVal <= target) {
+                            counter.innerText = Math.round(nextVal).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                            setTimeout(updateCounter, 20); // Fixed: 20ms for smooth animation
+                        } else {
+                            counter.innerText = target.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                            counter.removeAttribute('data-counted');
+                        }
+                    };
+                    
+                    updateCounter();
+                }
             });
             
             // Scroll reveal observer
@@ -405,6 +815,27 @@
             
             const fadeElements = document.querySelectorAll('.fade-up');
             fadeElements.forEach(el => observer.observe(el));
+            
+            // FAQ accordion functionality
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    const isActive = item.classList.contains('active');
+                    
+                    // Close all other items
+                    faqItems.forEach(i => {
+                        if (i !== item) {
+                            i.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current item
+                    if (!isActive) {
+                        item.classList.add('active');
+                    }
+                });
+            });
         });
     </script>
 
