@@ -11,7 +11,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,600;1,700&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;600;700&display=swap');
-
+        
         :root {
             /* === LUXURY PALETTE - GILDED DARK THEME === */
             --primary: #1a1a1a;        /* Tmavé zlate (namiesto modrej) */
@@ -61,349 +61,352 @@
             --radius-md: 24px;         /* Premium soft */
             --radius-lg: 32px;         /* Luxury rounded */
         }
-
+        
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: 'Lato', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.7;
+            color: var(--text-primary);
+            background: var(--gradient-luxury-deep);
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-md);
+        }
+        
+        /* === LUXURY HEADER - GOLD EMBELLISHED === */
+        .header-gold {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            background: var(--navbar-bg);
+            backdrop-filter: blur(20px);
+            border-bottom: var(--navbar-border);
+            box-shadow: var(--shadow-gold-sm);
+            transition: all 0.4s ease;
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.5rem var(--space-md);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo-luxury {
+            font-family: 'Cinzel', serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            background: var(--gradient-gold-dark);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+        
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--gold-primary);
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+        }
+        
+        .btn-luxury {
+            padding: 1rem 2.5rem;
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #fff;
+            background: var(--btn-primary-gradient);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+        }
+        
+        .btn-luxury:hover {
+            background: var(--btn-primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
+        }
 
-body {
-    font-family: 'Lato', -apple-system, BlinkMacSystemFont, sans-serif;
-    line-height: 1.7;
-    color: var(--text-primary);
-    background: var(--gradient-luxury-deep);
-    overflow-x: hidden;
-}
+        /* === SCROLL ANIMATIONS === */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* === HERO SECTION === */
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 100px;
+            position: relative;
+            overflow: hidden;
+            background: var(--gradient-luxury-deep);
+        }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 var(--space-md);
-}
+        .hero-content {
+            text-align: center;
+            max-width: 900px;
+            padding: 2rem;
+            z-index: 2;
+            position: relative;
+        }
 
-/* === LUXURY HEADER - GOLD EMBELLISHED === */
-.header-gold {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 1000;
-    background: var(--navbar-bg);
-    backdrop-filter: blur(20px);
-    border-bottom: var(--navbar-border);
-    box-shadow: var(--shadow-gold-sm);
-    transition: all 0.4s ease;
-}
+        .hero-title-gilded {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(3rem, 8vw, 4.5rem);
+            font-weight: 700;
+            background: var(--gradient-gold-dark);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
 
-.header-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1.5rem var(--space-md);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+        .hero-subtitle {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+            font-style: italic;
+        }
 
-/* === LUXURY LOGO - GILDED TEXT === */
-.logo-luxury { 
-    font-family: 'Cinzel', serif; 
-    font-size: 2rem; 
-    font-weight: 800; 
-    color: var(--gold-primary);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    text-shadow: var(--shadow-gold-sm);
-    background: var(--gradient-gold-dark);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
+        .hero-buttons-container {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
 
-/* === NAVIGATION LINKS - LUXURY STYLE === */
-.nav-links { display: flex; list-style: none; gap: 1.5rem; align-items: center; }
+        /* === ABOUT SECTION === */
+        .about-section {
+            padding: var(--space-xl) 0;
+            position: relative;
+        }
 
-.nav-links li a {
-    color: var(--text-primary);
-    font-weight: 600;
-    padding: 0.875rem 1.5rem;
-    border-radius: var(--radius-sm);
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    font-size: 0.85rem;
-    letter-spacing: 0.5px;
-    background: transparent;
-}
+        .section-title-gilded {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            text-align: center;
+            background: var(--gradient-gold-dark);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+        }
 
-.nav-links li a:hover, .nav-links li a.active { 
-    background: rgba(212, 175, 55, 0.15);
-    color: var(--gold-primary) !important;
-    border: 1px solid rgba(212, 175, 55, 0.3);
-    box-shadow: var(--shadow-gold-sm);
-}
+        /* === COUNTER SECTION === */
+        .counter-section {
+            padding: var(--space-xl) 0;
+            background: rgba(15, 15, 15, 0.8);
+        }
 
-/* === LUXURY BUTTONS - GOLD GRADIENT === */
-.btn-luxury {
-    display: inline-block;
-    background: var(--btn-primary-gradient);
-    color: #1a1a1a !important;
-    padding: 1rem 2.5rem;
-    border-radius: var(--radius-md);
-    font-weight: 700;
-    text-align: center;
-    box-shadow: var(--shadow-gold-lg);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    border: none;
-    cursor: pointer;
-    min-width: 200px !important; /* Fix pre zarovnanie */
-    max-width: 280px;
-}
+        .counter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-.btn-luxury:hover { 
-    background: var(--btn-primary-hover);
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: var(--shadow-gold-xl);
-}
+        .counter-card {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(26, 26, 26, 0.8);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: var(--radius-md);
+            transition: all 0.3s ease;
+        }
 
-/* === RESPONSIVE BUTTON LAYOUT FIX === */
-.hero-buttons-container {
-    display: flex !important;
-    gap: 1.5rem;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    width: 100%;
-}
+        .counter-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-gold-lg);
+        }
 
-.btn-luxury {
-    min-width: auto !important; /* Override pre flex layout */
-    flex: 1;
-    max-width: calc(50% - 1.5rem); /* Max 2 buttons per row */
-}
+        .counter-number {
+            font-family: 'Cinzel', serif;
+            font-size: 3.5rem;
+            background: var(--gradient-gold-dark);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
 
-@media (max-width: 768px) {
-    .btn-luxury { max-width: 100%; }
-}
+        .counter-label {
+            font-family: 'Playfair Display', serif;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+        }
 
-/* === HERO SECTION - LUXURY DARK GOLD === */
-.hero-section {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    padding-top: 120px;
-    background: var(--gradient-luxury-deep);
-}
+        /* === FOOTER === */
+        .footer-gilded {
+            background: rgba(10, 10, 10, 0.98);
+            border-top: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 3rem var(--space-md);
+            text-align: center;
+        }
 
-.hero-content {
-    text-align: center;
-    max-width: 900px;
-    padding: var(--space-xl);
-    z-index: 2;
-}
+        .footer-link {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
 
-/* === LUXURY TYPOGRAPHY - CINCAL & PLAYFAIR DISPLAY === */
-.hero-title-gilded {
-    font-family: 'Cinzel', serif;
-    font-size: clamp(2.5rem, 5vw, 4.5rem);
-    color: var(--gold-primary);
-    margin-bottom: var(--space-lg);
-    line-height: 1.1;
-    text-shadow: var(--shadow-gold-md);
-}
+        .footer-link:hover {
+            color: var(--gold-primary);
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+        }
 
-.hero-subtitle { 
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(1.2rem, 3vw, 1.8rem);
-    color: var(--text-secondary); 
-    margin-bottom: var(--space-lg);
-    font-style: italic;
-}
+    </style>
+</head>
+<body>
 
-/* === ABOUT SECTION - LUXURY DARK === */
-.about-section { padding: var(--space-xl) 0; background: rgba(15, 15, 15, 0.8); }
+    <!-- NAVIGATION -->
+    <nav class="navbar fade-up visible">
+        <div class="nav-container">
+            <a href="#" class="logo-luxury">✨ LASH MASTERCLASS</a>
+            <ul class="nav-links">
+                <li><a href="#about" class="active">O KURZE</a></li>
+                <li><a href="#testimonials">SVEDOCKETSTVIA</a></li>
+                <li><a href="#pricing">CENY</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact" class="btn-luxury" style="padding: 0.75rem 1.5rem; min-width: auto !important;">Začni Teraz!</a></li>
+            </ul>
+        </div>
+    </nav>
 
-.section-title-gilded { 
-    font-family: 'Cinzel', serif;
-    font-size: clamp(2rem, 4vw, 3rem);
-    text-align: center;
-    margin-bottom: var(--space-lg);
-    color: var(--gold-primary);
-    text-shadow: var(--shadow-gold-sm);
-}
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+        <div class="hero-content fade-up visible">
+            <h1 class="hero-title-gilded">Staneš sa<br>Profesionálnym Lash Artistom</h1>
+            <p class="hero-subtitle">Ovládni najnovšie techniky lomenia mihalien za 87 hodín. Získa certifikát medzinárodnej úrovne a začni generovať príjem z domu.</p>
+            <div class="hero-buttons-container">
+                <a href="#pricing" class="btn-luxury">Získajte Prémiovú Edukáciu</a>
+            </div>
+        </div>
+    </section>
 
-/* === ABOUT COURSE IMAGE - FIXED FOR MOBILE === */
-.about-course-content {
-    max-width: 100%;
-    overflow-x: auto; /* Horizontal scroll for small screens */
-    position: relative;
-}
+    <!-- ABOUT COURSE -->
+    <section id="about" class="about-section">
+        <div class="container fade-up visible">
+            <h2 class="section-title-gilded">O KURZE</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto; color: var(--text-secondary);">
+                Profesionálny kurz pre lomenie mihalien, ktorý vás naučí všetko od základov až po pokročilé techniky. Získate certifikát, ktorý je uznávaný v celej Európe a môžete začniť pracovať ešte dnes.
+            </p>
+        </div>
+    </section>
 
-.about-course-content > div {
-    min-width: 600px; /* Maintain aspect ratio on larger screens */
-    padding: var(--space-md);
-}
+    <!-- COUNTER SECTION -->
+    <section class="counter-section">
+        <div class="counter-grid">
+            <div class="counter-card">
+                <div class="counter-number" data-target="87" data-counted="0">0</div>
+                <div class="counter-label">Hodín Trvania</div>
+            </div>
+            <div class="counter-card">
+                <div class="counter-number" data-target="15" data-counted="0">0</div>
+                <div class="counter-label">Zákazníkov</div>
+            </div>
+        </div>
+    </section>
 
-/* === TESTIMONIALS - LUXURY CARDS === */
-.testimonials-section { padding: var(--space-xl) 0; background: rgba(26, 26, 26, 0.9); }
+    <!-- FOOTER -->
+    <footer class="footer-gilded">
+        <p>&copy; 2024 Lash Masterclass. All rights reserved.</p>
+        <div style="margin-top: 1rem;">
+            <a href="#" class="footer-link">Privacy Policy</a> | 
+            <a href="#" class="footer-link">Terms of Service</a> | 
+            <a href="#" class="footer-link">Contact</a>
+        </div>
+    </footer>
 
-.testimonial-container {
-    max-width: 100%;
-    overflow-x: auto;
-    position: relative;
-}
+    <!-- ANIMATION SCRIPT -->
+    <script>
+        // === SCROLL-TRIGGERED FADE-IN ANIMATIONS ===
+        document.addEventListener("DOMContentLoaded", function() {
+            
+            // Counter animation
+            const counters = document.querySelectorAll('.counter-number');
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                const countedElement = counter;
+                
+                const updateCounter = () => {
+                    const count = +countedElement.innerText;
+                    
+                    if (count < target) {
+                        const increment = target / 50;
+                        const speed = 200;
+                        countedElement.innerText = Math.min(count + increment, target);
+                        
+                        setTimeout(updateCounter, speed);
+                    } else {
+                        counter.innerText = target;
+                        counter.removeAttribute('data-counted');
+                    }
+                };
+                
+                updateCounter();
+            });
+            
+            // Scroll reveal observer
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+            
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+            
+            const fadeElements = document.querySelectorAll('.fade-up');
+            fadeElements.forEach(el => observer.observe(el));
+        });
+    </script>
 
-.testimonial-card {
-    min-width: calc(33.333% - 2rem); /* 3 cards per row desktop */
-    padding: var(--space-lg) var(--space-md);
-    background: rgba(40, 40, 40, 0.8);
-    border: 1px solid rgba(212, 175, 55, 0.3);
-    border-radius: var(--radius-md);
-    margin-right: 1rem;
-    transition: all 0.4s ease;
-}
-
-.testimonial-card:hover {
-    border-color: var(--gold-primary);
-    box-shadow: var(--shadow-gold-lg);
-    transform: translateY(-5px);
-}
-
-@media (max-width: 768px) {
-    .testimonial-card { min-width: calc(100% - 1rem); margin-right: 0.5rem; }
-}
-
-/* === PRICING SECTION - LUXURY DARK GOLD === */
-.pricing-section { padding: var(--space-xl) 0; background: rgba(15, 15, 15, 0.9); }
-
-/* === COUNTERS - LUXURY ANIMATION === */
-.counter-section { padding: var(--space-lg) 0; background: rgba(26, 26, 26, 0.8); }
-
-/* === FAQ SECTION - LUXURY ACCORDION === */
-.faq-section { padding: var(--space-xl) 0; background: rgba(15, 15, 15, 0.95); }
-
-.faq-item {
-    margin-bottom: 1rem;
-    border-radius: var(--radius-md);
-    overflow: hidden;
-}
-
-.faq-question {
-    width: 100%;
-    padding: 2rem var(--space-md);
-    background: rgba(40, 40, 40, 0.8);
-    border: none;
-    cursor: pointer;
-    font-family: 'Playfair Display', serif;
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: var(--gold-primary);
-    text-align: left;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.faq-question::after {
-    content: '+';
-    font-size: 2rem;
-    font-weight: 300;
-}
-
-.faq-item.active .faq-question::after {
-    content: '−';
-}
-
-/* === FOOTER - LUXURY GOLD === */
-.footer-gilded {
-    background: rgba(10, 10, 10, 0.98);
-    padding: var(--space-lg) 0;
-    border-top: 1px solid rgba(212, 175, 55, 0.3);
-}
-
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: var(--space-md) var(--space-md);
-    text-align: center;
-}
-
-.footer-logo-gilded {
-    font-family: 'Cinzel', serif;
-    font-size: 1.5rem;
-    color: var(--gold-primary);
-    margin-bottom: var(--space-sm);
-}
-
-.footer-links {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-    margin-top: var(--space-md);
-}
-
-.footer-link {
-    color: var(--text-muted);
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
-}
-
-.footer-link:hover {
-    color: var(--gold-primary);
-    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
-}
-
-/* === MOBILE RESPONSIVE - FIXED === */
-@media (max-width: 992px) {
-    .header-content {
-        flex-direction: column;
-        gap: 1rem;
-    }
-    
-    .logo-luxury { text-align: center; }
-}
-
-@media (max-width: 768px) {
-    .nav-links li a { padding: 0.75rem 1rem; font-size: 0.8rem; }
-    .hero-title-gilded { font-size: 2rem; }
-    
-    /* Testimonials stacked on mobile */
-    .testimonial-card { min-width: 100%; margin-bottom: 1rem; }
-}
-
-@media (max-width: 480px) {
-    .header-content { padding: 1rem var(--space-sm); }
-    .hero-title-gilded { font-size: 1.8rem; }
-    
-    /* Hero buttons single column on small mobile */
-    .btn-luxury { max-width: 100%; }
-}
-
-/* === ANIMATIONS - LUXURY FADE UP === */
-.fade-up {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.fade-up.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* === FLOATING ELEMENTS - LUXURY PARALLAX === */
-.floating-element {
-    position: fixed;
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
-    pointer-events: none;
-    z-index: -1;
-    animation: float 8s infinite ease-in-out;
-}
-
-@keyframes float {
-    0%, 100% { transform: translate(0, 0) scale(1); }
-    25% { transform: translate(30px, -30px) scale(1.1); }
-    50% { transform: translate(-20px, 20px) scale(0.9); }
-    75% { transform: translate(20px, 30px) scale(1.05); }
-}
+</body>
+</html>
