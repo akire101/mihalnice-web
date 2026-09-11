@@ -3,74 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lash Masterclass - Premium Lash Artistry Kurz</title>
+    <title>Mihalnice Masterclass - Premium Lash Artistry</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* === LUXURY DARK GOLD THEME - COMPLETE REDESIGN V14 === */
+        /* === CLAUDE DESIGN + LAYERS.IO PREMIUM THEME === */
         
-        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Lato:wght@300;400;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cinzel:wght@400;600;700;800&display=swap');
         
+        /* === PREMIUM LAYERS.IO ANIMATION VARIABLES === */
         :root {
-            --primary: #1a1a1a;        /* Dark luxury black */
-            --secondary: #2d2d2d;      /* Deep charcoal */
-            --tertiary: #0f0f0f;       /* Almost black */
-            --accent: #D4AF37;         /* Luxury Gold Primary */
-            --accent-light: #C5A028;   /* Gold secondary */
-            --accent-bright: #E6C873;  /* Bright gold */
-            --gold-primary: #D4AF37;   /* Main gold */
-            --dark-bg: #1a1a1a;        /* Dark luxury background */
-            --dark-card: rgba(26, 26, 26, 0.95);
-            --text-primary: #f5f5f5;   /* White text */
-            --text-secondary: rgba(245, 245, 245, 0.85);
-            --text-muted: rgba(245, 245, 245, 0.6);
-            --radius-sm: 12px;
-            --radius-md: 24px;
-            --radius-lg: 32px;
+            --primary: #0a0a0b;         /* Deep black */
+            --secondary: #121214;       /* Dark charcoal */
+            --tertiary: #17171a;        /* Rich dark */
+            --accent: #F59E0B;          /* Premium Amber Gold */
+            --accent-glow: rgba(245, 158, 11, 0.3);
+            --text-primary: #fafafa;
+            --text-secondary: rgba(250, 250, 250, 0.75);
+            --text-muted: rgba(250, 250, 250, 0.55);
+            
+            /* Glass morphism */
+            --glass-bg: rgba(19, 19, 21, 0.6);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --glass-blur: blur(16px);
+            
+            /* Premium spacing */
             --space-xs: 0.5rem;
             --space-sm: 1rem;
             --space-md: 1.75rem;
-            --space-lg: 2.5rem;
-            --space-xl: 4rem;
-            --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.3);
-            --shadow-md: 0 8px 25px rgba(0, 0, 0, 0.4);
-            --shadow-lg: 0 12px 40px rgba(212, 175, 55, 0.2);
-            --shadow-xl: 0 20px 60px rgba(212, 175, 55, 0.25);
-            --gradient-primary: linear-gradient(135deg, #D4AF37 0%, #C5A028 100%);
-            --gradient-accent: linear-gradient(135deg, #E6C873 0%, #D4AF37 100%);
+            --space-lg: 3rem;
+            --space-xl: 4.5rem;
+            --space-2xl: 6rem;
+            
+            /* Premium shadows */
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.4);
+            --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.5);
+            --shadow-xl: 0 12px 60px rgba(0, 0, 0, 0.6);
+            --shadow-glow: 0 0 40px var(--accent-glow);
+            
+            /* Gradients */
+            --gradient-primary: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+            --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.01) 100%);
+            
+            /* Animation timing */
+            --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+            --ease-in-out-quad: cubic-bezier(0.45, 0, 0.55, 1);
+            
+            /* Animation delays */
+            --delay-none: 0ms;
+            --delay-fast: 50ms;
+            --delay-md: 100ms;
+            --delay-slow: 200ms;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
+
         body {
-            font-family: 'Lato', -apple-system, BlinkMacSystemFont, sans-serif;
-            line-height: 1.7;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
             color: var(--text-primary);
-            background: linear-gradient(135deg, #0a0f2e 0%, #1a344f 50%, #0d132c 100%);
+            background: 
+                radial-gradient(ellipse at 0% 0%, rgba(245, 158, 11, 0.03) 0%, transparent 50%),
+                radial-gradient(ellipse at 100% 100%, rgba(245, 158, 11, 0.015) 0%, transparent 50%),
+                linear-gradient(180deg, #0a0a0b 0%, #0d0d0f 100%);
+            min-height: 100vh;
             overflow-x: hidden;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 var(--space-md);
+        /* === SCROLL ANIMATIONS - LAYERS.IO STYLE === */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s var(--ease-out-expo), 
+                        transform 0.8s var(--ease-out-expo);
         }
 
-        /* === NAVIGATION - LUXURY GOLD DARK THEME === */
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 { transition-delay: 0ms; }
+        .reveal-delay-2 { transition-delay: 100ms; }
+        .reveal-delay-3 { transition-delay: 200ms; }
+        .reveal-delay-4 { transition-delay: 300ms; }
+
+        /* === PREMIUM CONTAINER === */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+        }
+
+        /* === NAVIGATION - CLAUDE DESIGN === */
         .navbar {
             position: fixed;
             top: 0; left: 0; right: 0;
             z-index: 1000;
-            background: rgba(15, 15, 15, 0.98);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
-            padding: 1.2rem 0;
-            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.15);
+            background: var(--glass-bg);
+            backdrop-filter: var(--glass-blur);
+            border-bottom: 1px solid var(--glass-border);
+            padding: clamp(0.8rem, 1vw + 0.5rem, 1rem) 0;
+            box-shadow: var(--shadow-sm);
         }
 
         .nav-container {
-            max-width: 1200px;
+            max-width: 1280px;
             margin: 0 auto;
-            padding: 0 var(--space-md);
+            padding: 0 var(--space-lg);
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -78,48 +118,45 @@
 
         .logo-luxury { 
             font-family: 'Cinzel', serif;
-            font-size: 1.8rem !important;
-            font-weight: 800 !important;
-            letter-spacing: 3px;
+            font-size: clamp(1.2rem, 2vw, 1.6rem);
+            font-weight: 700;
+            letter-spacing: 2px;
             text-transform: uppercase;
-            background: linear-gradient(135deg, #D4AF37 0%, #C5A028 50%, #B8962E 100%);
+            background: linear-gradient(135deg, #F59E0B 0%, #D97706 50%, #B45309 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            text-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
         }
 
         .nav-links { 
             display: flex !important; 
             list-style: none !important; 
-            gap: 1rem;
+            gap: 0.5rem;
             align-items: center;
             margin-left: auto;
-            padding-right: var(--space-md);
+            padding-right: var(--space-lg);
         }
 
         .nav-links a {
-            color: var(--text-primary);
-            font-family: 'Cinzel', serif;
+            color: var(--text-secondary);
+            font-family: 'Inter', sans-serif;
             text-transform: uppercase;
-            font-size: 0.85rem !important;
-            letter-spacing: 1px;
-            padding: 0.75rem 1.2rem;
-            transition: all 0.3s ease;
+            font-size: 0.75rem;
+            letter-spacing: 1.5px;
+            padding: 0.6rem 1rem;
+            border-radius: 8px;
+            transition: all 0.3s var(--ease-in-out-quad);
             position: relative;
         }
 
         .nav-links a:hover {
-            color: var(--gold-primary) !important;
-            text-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
-            transform: translateY(-2px) scale(1.01);
+            color: var(--accent);
+            background: rgba(245, 158, 11, 0.1);
         }
 
-        /* === MOBILE MENU DROPDOWN (HAMBURGER) === */
+        /* === MOBILE MENU DROPDOWN === */
         @media (max-width: 768px) {
-            .nav-links {
-                display: none !important;
-            }
+            .nav-links { display: none !important; }
 
             .mobile-nav-toggle {
                 display: flex !important;
@@ -136,30 +173,25 @@
                 content: '☰';
                 color: var(--text-primary);
                 font-size: 1.5rem;
-                position: absolute;
-                left: 50%;
-                transform: translateX(-50%);
             }
 
             .mobile-nav-toggle.active::before {
                 content: '✕';
-                color: var(--gold-primary);
+                color: var(--accent);
             }
 
             .nav-menu-container {
                 position: fixed;
-                top: 70px;
-                left: 0;
-                right: 0;
-                background: rgba(15, 15, 15, 0.98);
-                backdrop-filter: blur(20px);
+                top: 60px; left: 0; right: 0;
+                background: var(--glass-bg);
+                backdrop-filter: var(--glass-blur);
                 padding: var(--space-md);
-                max-height: 80vh;
+                max-height: 75vh;
                 overflow-y: auto;
                 opacity: 0;
                 visibility: hidden;
                 transform: translateY(-20px);
-                transition: all 0.4s ease;
+                transition: all 0.4s var(--ease-out-expo);
                 z-index: 999;
             }
 
@@ -169,960 +201,884 @@
                 transform: translateY(0);
             }
 
-            .nav-menu-container nav ul {
-                list-style: none;
-                padding: 0;
-            }
-
-            .nav-menu-container nav li {
-                margin: 0.8rem 0;
-            }
-
             .nav-menu-container nav a {
-                font-size: 1.1rem !important;
-                padding: 0.5rem 1rem !important;
+                font-size: 0.85rem !important;
+                padding: 0.6rem 1rem !important;
             }
         }
 
-        .btn-luxury {
-            padding: 0.8rem 1.8rem;
-            font-family: 'Cinzel', serif;
-            text-transform: uppercase !important;
-            letter-spacing: 1px !important;
-            font-size: 0.85rem !important;
-            color: white;
-            background: linear-gradient(135deg, #D4AF37 0%, #C5A028 100%) !important;
-            border-radius: 50px !important;
-            cursor: pointer;
-            text-decoration: none !important;
-            display: inline-block !important;
-            transition: all 0.3s ease !important;
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
-            min-width: auto !important;
-            width: auto !important;
-        }
-
-        .btn-luxury:hover {
-            background: linear-gradient(135deg, #E6C873 0%, #D4AF37 100%) !important;
-            transform: translateY(-2px) scale(1.02);
-            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
-        }
-
-        /* === HERO SECTION WITH BACKGROUND IMAGE === */
-        .hero-section {
+        /* === HERO SECTION - PREMIUM LAYERS.IO STYLE === */
+        .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
             position: relative;
-            padding-top: 120px;
-            background: linear-gradient(rgba(15, 15, 15, 0.7), rgba(26, 26, 26, 0.8)),
-                        url('https://images.unsplash.com/photo-1522383226663-b24a2035bc65?w=1920&q=80&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: 
+                radial-gradient(circle at 30% 20%, rgba(245, 158, 11, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(245, 158, 11, 0.05) 0%, transparent 40%);
+            animation: hero-pulse 15s ease-in-out infinite;
+        }
+
+        @keyframes hero-pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.8; }
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-xl);
+            align-items: center;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+            position: relative;
+            z-index: 1;
         }
 
         .hero-content {
-            position: relative;
-            text-align: center;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: var(--space-lg);
-            z-index: 2;
+            animation: fadeUp 1s var(--ease-out-expo) both;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-label {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent);
+            background: rgba(245, 158, 11, 0.1);
+            padding: 0.4rem 0.9rem;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+            backdrop-filter: blur(8px);
         }
 
         .hero-title {
             font-family: 'Cinzel', serif;
-            font-size: clamp(2.5rem, 7vw, 4rem) !important;
-            font-weight: 800 !important;
-            line-height: 1.1 !important;
-            background: linear-gradient(135deg, #D4AF37 0%, #E6C873 50%, #C5A028 100%) !important;
-            -webkit-background-clip: text !important;
-            -webkit-text-fill-color: transparent !important;
-            background-clip: text !important;
-            margin-bottom: var(--space-md) !important;
-            letter-spacing: 2px;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: var(--space-md);
         }
 
-        .hero-subtitle { 
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(1rem, 3vw, 1.5rem) !important; 
-            color: var(--text-secondary) !important; 
-            margin-bottom: var(--space-lg) !important; 
-            line-height: 1.6;
-            max-width: 800px;
-            font-style: italic;
-        }
-
-        .hero-buttons { 
-            display: flex; 
-            gap: var(--space-md); 
-            justify-content: center; 
-            align-items: stretch;
-            flex-wrap: wrap; 
-            margin-top: var(--space-lg); 
-        }
-
-        /* === CTA BUTTONS WITH PERFECT ALIGNMENT === */
-        .cta-button {
-            min-height: 60px !important;
-            min-width: 220px !important;
-            max-width: 280px;
-            text-align: center !important;
-            padding: 1.3rem 2.5rem !important; 
-            font-size: 1rem !important;
-            font-weight: 600 !important;
-            letter-spacing: 0.5px;
-            cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            border-radius: var(--radius-md);
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 12px 35px rgba(212, 175, 55, 0.4);
-        }
-
-        .cta-button-primary {
-            background: var(--gradient-accent) !important;
-            color: white !important;
-            border: none !important;
-            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
-        }
-
-        .cta-button-primary:hover {
-            background: linear-gradient(135deg, #E6C873 0%, #D4AF37 100%) !important;
-        }
-
-        .cta-button-secondary {
-            background: rgba(255, 255, 255, 0.1) !important;
-            color: white !important;
-            border: 2px solid rgba(212, 175, 55, 0.5) !important;
-            backdrop-filter: blur(10px);
-        }
-
-        /* === ABOUT COURSE SECTION === */
-        .about-section {
-            padding: var(--space-xl) 0;
-            position: relative;
-            background: var(--dark-bg);
-        }
-
-        .section-title-gilded {
-            font-family: 'Cinzel', serif;
-            font-size: clamp(2rem, 6vw, 3.5rem);
-            text-align: center;
-            background: var(--gradient-accent);
+        .hero-title span {
+            background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            margin-bottom: 2rem;
-            padding-bottom: 1rem;
-            letter-spacing: 2px;
         }
 
-        .about-content {
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
-            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+        .hero-description {
+            font-size: clamp(0.95rem, 1.5vw, 1.1rem);
             color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: var(--space-lg);
+            max-width: 540px;
         }
 
-        /* === COUNTER SECTION WITH FIXED DECIMALS === */
-        .counter-section {
-            padding: var(--space-xl) 0;
-            background: rgba(15, 15, 15, 0.8);
+        .cta-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
         }
 
-        .counter-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: var(--space-md);
-            max-width: 1200px;
-            margin: 0 auto;
+        .btn-luxury {
+            padding: 0.9rem 2rem;
+            font-family: 'Inter', sans-serif;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            color: white;
+            background: var(--gradient-primary);
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s var(--ease-in-out-quad);
+            box-shadow: 0 4px 20px rgba(245, 158, 11, 0.3);
+            border: none;
+            font-weight: 600;
         }
 
-        .counter-card {
-            text-align: center;
-            padding: var(--space-lg);
-            background: var(--dark-card);
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            border-radius: var(--radius-md);
-            transition: all 0.3s ease;
+        .btn-luxury:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(245, 158, 11, 0.4);
         }
 
-        .counter-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .counter-number {
-            font-family: 'Cinzel', serif;
-            font-size: clamp(2.5rem, 8vw, 4rem);
-            background: var(--gradient-accent);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .counter-label {
-            font-family: 'Playfair Display', serif;
-            color: var(--text-muted);
-            margin-top: 0.5rem;
-            font-size: clamp(1rem, 3vw, 1.2rem);
-        }
-
-        /* === TESTIMONIALS SECTION WITH CLIENT PORTRAITS === */
-        .testimonials-section {
-            padding: var(--space-xl) 0;
+        .hero-visual {
             position: relative;
-            background: linear-gradient(135deg, rgba(26, 26, 26, 0.95), rgba(15, 15, 15, 0.98));
+            animation: float 6s ease-in-out infinite;
         }
 
-        .testimonials-grid {
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .hero-visual::before {
+            content: '';
+            position: absolute;
+            top: -30px; right: -30px;
+            width: 200px; height: 200px;
+            background: radial-gradient(circle, rgba(245, 158, 11, 0.1) 0%, transparent 70%);
+            animation: pulse-glow 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.1); }
+        }
+
+        /* === ABOUT/FEATURES SECTION === */
+        .about {
+            padding: var(--space-2xl) 0;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto var(--space-xl);
+        }
+
+        .section-label {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: var(--space-sm);
+        }
+
+        .section-title {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: var(--space-md);
+        }
+
+        .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: var(--space-lg);
-            max-width: 1200px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-width: 1280px;
             margin: 0 auto;
+            padding: 0 var(--space-lg);
         }
 
-        .testimonial-card {
-            background: rgba(26, 26, 26, 0.8);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            border-radius: var(--radius-md);
-            padding: var(--space-lg);
-            transition: all 0.3s ease;
+        .feature-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(12px);
+            padding: 2rem;
+            border-radius: 16px;
+            transition: all 0.4s var(--ease-out-expo);
+            cursor: default;
         }
 
-        .testimonial-card:hover {
+        .feature-card:hover {
             transform: translateY(-5px);
             box-shadow: var(--shadow-lg);
+            border-color: rgba(245, 158, 11, 0.3);
         }
 
-        .client-image {
-            width: 100%;
-            height: 280px;
-            object-fit: cover;
-            border-radius: var(--radius-sm);
-            margin-bottom: var(--space-md);
-            transition: transform 0.3s ease;
-        }
-
-        .testimonial-card:hover .client-image {
-            transform: scale(1.05);
-        }
-
-        .client-image-placeholder {
-            width: 100%;
-            height: 280px;
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-            border-radius: var(--radius-sm);
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 1rem;
             display: flex;
             align-items: center;
             justify-content: center;
+            background: rgba(245, 158, 11, 0.1);
+            border-radius: 12px;
+            font-size: 1.3rem;
+        }
+
+        .feature-title {
             font-family: 'Cinzel', serif;
-            font-size: 4rem;
-            color: rgba(212, 175, 55, 0.3);
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
         }
 
-        .testimonial-text {
-            font-family: 'Playfair Display', serif;
-            font-style: italic;
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: var(--text-secondary);
-            margin-bottom: var(--space-sm);
+        .feature-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.6;
         }
 
-        .client-name {
-            font-family: 'Cinzel', serif;
-            color: var(--gold-primary);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 0.9rem;
+        /* === BENEFITS SECTION - CLAUDE DESIGN CARD STYLE === */
+        .benefits {
+            padding: var(--space-2xl) 0;
+            background: linear-gradient(180deg, transparent 0%, rgba(245, 158, 11, 0.03) 50%, transparent 100%);
         }
 
-        /* === PRICING SECTION WITH LUXURY CARDS === */
-        .pricing-section {
-            padding: var(--space-xl) 0;
-            position: relative;
-            background: linear-gradient(135deg, rgba(26, 26, 26, 0.9), rgba(15, 15, 15, 0.95));
-        }
-
-        .pricing-grid {
+        .benefits-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: var(--space-lg);
-            max-width: 1200px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: var(--space-md);
+            max-width: 1280px;
             margin: 0 auto;
+            padding: 0 var(--space-lg);
         }
 
-        .pricing-card {
-            background: rgba(26, 26, 26, 0.9);
-            border: 2px solid transparent;
-            border-radius: var(--radius-lg);
-            padding: var(--space-xl);
-            text-align: center;
-            transition: all 0.4s ease;
+        .benefit-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.01) 100%);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(8px);
+            padding: 2rem;
+            border-radius: 16px;
             position: relative;
+            overflow: hidden;
+            transition: all 0.4s var(--ease-out-expo);
         }
 
-        .pricing-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--gold-primary);
-            box-shadow: var(--shadow-xl);
-        }
-
-        .pricing-card.premium {
-            border-color: var(--gold-primary);
-            background: linear-gradient(135deg, rgba(26, 26, 26, 0.95), rgba(40, 40, 40, 0.98));
-        }
-
-        .pricing-card.premium::before {
-            content: 'PREMIUM';
+        .benefit-card::before {
+            content: '';
             position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--gradient-accent);
-            color: white;
-            padding: 0.4rem 1.5rem;
+            top: 0; left: 0; right: 0; height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(245, 158, 11, 0.3), transparent);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: var(--shadow-glow);
+            border-color: rgba(245, 158, 11, 0.3);
+        }
+
+        .benefit-card.checked::before {
+            background: linear-gradient(90deg, transparent, rgba(245, 158, 11, 0.6), transparent);
+        }
+
+        .benefit-icon {
+            position: absolute;
+            top: 1rem; right: 1.5rem;
+            font-size: 1.5rem;
+            opacity: 0.2;
+        }
+
+        .benefit-title {
             font-family: 'Cinzel', serif;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .benefit-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* === E-BOOK SECTION === */
+        .ebook-section {
+            padding: var(--space-2xl) 0;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .ebook-card {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, rgba(245, 158, 11, 0.03) 100%);
+            border: 1px solid rgba(245, 158, 11, 0.2);
+            border-radius: 24px;
+            padding: 3rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ebook-card::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(245, 158, 11, 0.05) 0%, transparent 40%);
+            animation: ebook-glow 8s ease-in-out infinite;
+        }
+
+        @keyframes ebook-glow {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.7; }
+        }
+
+        .ebook-price {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
             font-weight: 700;
-            letter-spacing: 2px;
-            font-size: 0.8rem;
-            border-radius: 50px;
-        }
-
-        .pricing-title {
-            font-family: 'Cinzel', serif;
-            font-size: clamp(1.5rem, 4vw, 2.5rem);
-            background: var(--gradient-accent);
+            background: var(--gradient-primary);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            margin-bottom: var(--space-sm);
+            margin-bottom: 1rem;
         }
 
-        .pricing-price {
-            font-family: 'Cinzel', serif;
-            font-size: clamp(2rem, 6vw, 3.5rem);
-            background: var(--gradient-accent);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: var(--space-md);
-        }
-
-        .pricing-features {
-            list-style: none;
-            text-align: left;
-            margin: var(--space-lg) 0;
-        }
-
-        .pricing-features li {
-            padding: 0.5rem 0;
+        .ebook-title {
+            font-family: 'Inter', sans-serif;
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
             color: var(--text-secondary);
+            font-weight: 500;
+            margin-bottom: 2rem;
+        }
+
+        .ebook-features {
+            text-align: left;
+            max-width: 400px;
+            margin: 0 auto 2rem;
+            padding-left: var(--space-md);
+        }
+
+        .ebook-features li {
+            list-style: none;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
             display: flex;
             align-items: center;
             gap: 0.5rem;
         }
 
-        .pricing-features li::before {
+        .ebook-features li::before {
             content: '✓';
-            color: var(--gold-primary);
+            color: var(--accent);
             font-weight: 700;
         }
 
-        .pricing-btn {
-            padding: 1rem 2rem;
-            background: var(--gradient-accent);
-            color: white !important;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            font-family: 'Cinzel', serif;
+        /* === CTA BUTTONS === */
+        .btn-luxury-outline {
+            padding: 0.9rem 2rem;
+            font-family: 'Inter', sans-serif;
             text-transform: uppercase;
+            font-size: 0.75rem;
             letter-spacing: 1px;
-            transition: all 0.3s ease;
-            display: inline-block;
-        }
-
-        .pricing-btn:hover {
-            background: var(--gradient-accent);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
-        }
-
-        /* === FAQ ACCORDION SECTION === */
-        .faq-section {
-            padding: var(--space-xl) 0;
-            position: relative;
-            background: linear-gradient(135deg, rgba(26, 26, 26, 0.9), rgba(15, 15, 15, 0.95));
-        }
-
-        .faq-container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .faq-item {
-            background: rgba(26, 26, 26, 0.8);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            border-radius: var(--radius-md);
-            margin-bottom: 1rem;
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-
-        .faq-item:hover {
-            border-color: rgba(212, 175, 55, 0.4);
-        }
-
-        .faq-question {
-            padding: var(--space-md);
+            color: var(--accent);
+            background: transparent;
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            border-radius: 8px;
             cursor: pointer;
-            display: flex;
-            justify-content: space-between;
+            text-decoration: none;
+            display: inline-flex;
             align-items: center;
-            font-family: 'Cinzel', serif;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 1rem;
+            gap: 0.5rem;
+            transition: all 0.3s var(--ease-in-out-quad);
+            backdrop-filter: blur(8px);
         }
 
-        .faq-question::after {
-            content: '+';
-            color: var(--gold-primary);
-            font-size: 1.5rem;
-            transition: transform 0.3s ease;
-        }
-
-        .faq-item.active .faq-question::after {
-            transform: rotate(45deg);
-        }
-
-        .faq-answer {
-            padding: 0 var(--space-md);
-            max-height: 0;
-            overflow: hidden;
-            transition: all 0.4s ease;
-            color: var(--text-secondary);
-            line-height: 1.8;
-        }
-
-        .faq-item.active .faq-answer {
-            padding: var(--space-md) var(--space-md);
-            max-height: 500px;
-        }
-
-        /* === CTA BANNER SECTION === */
-        .cta-banner-section {
-            padding: var(--space-xl) 0;
-            position: relative;
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(26, 26, 26, 0.9));
-            text-align: center;
-        }
-
-        .cta-banner {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: var(--space-xl);
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            border-radius: var(--radius-lg);
-        }
-
-        .cta-banner h2 {
-            font-family: 'Cinzel', serif;
-            font-size: clamp(1.8rem, 5vw, 2.5rem);
-            background: var(--gradient-accent);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: var(--space-sm);
+        .btn-luxury-outline:hover {
+            background: rgba(245, 158, 11, 0.08);
+            border-color: rgba(245, 158, 11, 0.6);
+            transform: translateY(-2px);
         }
 
         /* === FOOTER === */
-        .footer-gilded {
-            background: rgba(10, 10, 10, 0.98);
-            border-top: 1px solid rgba(212, 175, 55, 0.3);
-            padding: var(--space-xl) var(--space-md);
-            text-align: center;
+        footer {
+            background: linear-gradient(180deg, #0a0a0b 0%, #0d0d0f 100%);
+            padding: var(--space-xl) 0 var(--space-lg);
+            border-top: 1px solid var(--glass-border);
         }
 
-        .footer-link {
-            color: var(--text-muted);
-            text-decoration: none;
-            transition: all 0.3s ease;
+        .footer-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-lg);
+            padding: 0 var(--space-lg);
         }
 
-        .footer-link:hover {
-            color: var(--gold-primary);
-            text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
-        }
-
-        /* === SCROLL ANIMATIONS === */
-        .fade-up {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-        
-        .fade-up.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-    
-        /* === BENEFIT CARDS STYLING === */
-        .benefit-card {
-            position: relative;
-            padding: 3rem 2rem;
-            background: rgba(40, 40, 40, 0.6);
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            border-radius: var(--radius-lg);
-            text-align: center;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            height: 100%;
-            min-height: 280px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .benefit-card:hover {
-            background: rgba(45, 45, 45, 0.9);
-            border-color: var(--gold-primary);
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 12px 30px rgba(212, 175, 55, 0.15);
-        }
-
-        .benefit-icon {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            display: inline-block;
-            transition: all 0.4s ease;
-        }
-
-        .benefit-card:hover .benefit-icon {
-            transform: scale(1.15) rotate(5deg);
-        }
-
-        .benefit-card h3 {
-            font-size: 1.6rem;
+        .footer-section h4 {
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
             color: var(--text-primary);
             margin-bottom: 1rem;
-            font-weight: 600;
-            letter-spacing: -0.5px;
         }
 
-        .benefit-card ul {
+        .footer-section ul {
             list-style: none;
-            padding: 0;
-            text-align: left;
-            margin-top: auto;
         }
 
-        .benefit-card li {
-            position: relative;
-            padding-left: 1.8rem;
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 0.95rem;
-            line-height: 1.7;
+        .footer-section li {
+            margin-bottom: 0.5rem;
         }
 
-        .benefit-card li::before {
-            content: '✓';
-            position: absolute;
-            left: 0.3rem;
-            color: var(--gold-primary);
-            font-weight: bold;
-            font-size: 1.1rem;
+        .footer-section a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.3s ease;
         }
 
-        /* === INVESTICIA SECTION STYLING === */
-        .investicia-sekcia {
-            padding: 8rem 0;
-            background: rgba(20, 20, 20, 0.3);
+        .footer-section a:hover {
+            color: var(--accent);
         }
 
-        .premium-badge {
-            position: absolute;
-            top: -15px;
-            right: -15px;
-            background: linear-gradient(135deg, var(--gold-primary), #b8860b);
-            color: #1a1a1a;
-            font-weight: 700;
-            font-size: 0.75rem;
-            padding: 0.4rem 0.8rem;
-            border-radius: 30px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+        .footer-bottom {
+            max-width: 1280px;
+            margin: var(--space-lg) auto 0;
+            padding-top: var(--space-md);
+            border-top: 1px solid var(--glass-border);
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--text-muted);
         }
 
-        .pricing-description {
-            color: var(--text-secondary);
-            font-size: 1rem;
-            line-height: 1.7;
-            max-width: 400px;
-            margin: 0 auto 2rem;
-        }
-
-        /* === RESPONSIVE BENEFITS GRID === */
+        /* === RESPONSIVE === */
         @media (max-width: 768px) {
-            .benefits-grid {
-                grid-template-columns: 1fr !important;
-            }
-            
-            .benefit-card {
-                min-height: 300px !important;
-                padding: 2.5rem 1.5rem;
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-lg);
             }
 
-            .benefit-icon {
-                font-size: 2.8rem !important;
+            .hero-visual {
+                order: -1;
             }
 
-            .benefit-card h3 {
-                font-size: 1.4rem !important;
-            }
-
-            .benefit-card li {
-                font-size: 0.9rem !important;
+            .cta-group {
+                flex-direction: column;
             }
         }
-</style>
+
+    </style>
 </head>
 <body>
-
-    <!-- NAVIGATION -->
-    <nav class="navbar fade-up visible">
+    <!-- === NAVIGATION --> -->
+    <nav class="navbar">
         <div class="nav-container">
-            <a href="#" class="logo-luxury">💎 LASH MASTERCLASS</a>
+            <a href="#" class="logo-luxury">Mihalnice Masterclass</a>
+            
             <ul class="nav-links">
-                <li><a href="#about" class="active">O KURZE</a></li>
-                <li><a href="#testimonials">SVEDOCKETSTVIA</a></li>
-                <li><a href="#pricing">CENY</a></li>
+                <li><a href="#about">O kurze</a></li>
+                <li><a href="#benefits">Výhody</a></li>
+                <li><a href="#ebook">Kariéra</a></li>
                 <li><a href="#faq">FAQ</a></li>
-                <li><a href="#contact" class="btn-luxury">Začni Teraz!</a></li>
+                <li><a href="#contact">Kontakt</a></li>
             </ul>
+
+            <div class="mobile-nav-toggle" onclick="toggleMobileMenu()"></div>
         </div>
     </nav>
 
-    <!-- HERO SECTION WITH COVER IMAGE -->
+    <!-- === MOBILE MENU --> -->
+    <div class="nav-menu-container">
+        <nav>
+            <ul>
+                <li><a href="#about">O kurze</a></li>
+                <li><a href="#benefits">Výhody</a></li>
+                <li><a href="#ebook">Kariéra</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- === HERO SECTION --> -->
+    <section class="hero">
+        <div class="hero-grid">
+            <div class="hero-content">
+                <span class="hero-label reveal-delay-1">Premium Lash Artistry Kurz</span>
+                <h1 class="hero-title reveal-delay-2">
+                    Získaj <span>Profesionálne</span><br>Mihalnice Skills
+                </h1>
+                <p class="hero-description reveal-delay-3">
+                    Interaktívny online kurz o predlžovaní mihalníc pre pokročilých technikov. 
+                    Nauč sa 121+ pokročilým technikám, tvoriť vlastné dizajny a stavať si prosperitnú kariéru.
+                </p>
+                <div class="cta-group reveal-delay-4">
+                    <a href="#about" class="btn-luxury">Začať kurz teraz</a>
+                    <a href="#ebook" class="btn-luxury-outline">Staneš sa profesionálom</a>
+                </div>
+            </div>
+
+            <div class="hero-visual reveal">
+                🎨✨
+            </div>
+        </div>
     </section>
-<section id="pricing" class="investicia-sekcia fade-up visible">
-    <div class="container">
-        <h2 class="luxury-section-title text-center">Investícia do Vašej Kariéry</h2>
-        <p class="text-center luxury-subtitle">Získajte odborné znalosti už dnes - iba jedna položka</p>
-        
-        <div class="pricing-container">
-            <div class="pricing-card premium fade-up visible">
-                <div class="premium-badge">Best Value</div>
-                <h3>E-book: "Lash Artist Mastery"</h3>
-                <div class="pricing-price">€29</div>
-                <p class="pricing-description">Kompletný digitálny sprievodca naštartovať svoju lash kariéru</p>
-                
-                <ul class="pricing-features">
-                    <li>✓ 87+ hodín videoučenia</li>
-                    <li>✓ Uznávaný certifikát v EÚ</li>
-                    <li>✓ Živý mentoring s expertkou</li>
-                    <li>✓ Prístup na vždy</li>
-                    <li>✓ Profesionálne PDF materiály</li>
-                    <li>✓ Zoznam spoľahlivých dodávateľov</li>
-                    <li>✓ Sprievodný online slovníček</li>
+
+    <!-- === ABOUT SECTION --> -->
+    <section id="about" class="about">
+        <div class="section-header">
+            <span class="section-label reveal">O kurze</span>
+            <h2 class="section-title reveal-delay-1">Komplexné vzdelávanie pre lash artistry profesionálov</h2>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card reveal-delay-2">
+                <div class="feature-icon">⚡</div>
+                <h3 class="feature-title">121+ Techniky</h3>
+                <p class="feature-desc">Master all lash techniques from classic to hybrid, volume, and mega volume lashes.</p>
+            </div>
+
+            <div class="feature-card reveal-delay-2">
+                <div class="feature-icon">🎨</div>
+                <h3 class="feature-title">Vlastné dizajny</h3>
+                <p class="feature-desc">Create stunning custom lash designs and master every artistic detail.</p>
+            </div>
+
+            <div class="feature-card reveal-delay-2">
+                <div class="feature-icon">💼</div>
+                <h3 class="feature-title">Kariérny rast</h3>
+                <p class="feature-desc">Build your lash career from scratch with proven business strategies.</p>
+            </div>
+
+            <div class="feature-card reveal-delay-2">
+                <div class="feature-icon">🎯</div>
+                <h3 class="feature-title">Profesionálne zručnosti</h3>
+                <p class="feature-desc">Master advanced skills and industry-standard techniques.</p>
+            </div>
+
+            <div class="feature-card reveal-delay-2">
+                <div class="feature-icon">📚</div>
+                <h3 class="feature-title">Kvalitný obsah</h3>
+                <p class="feature-desc">Comprehensive curriculum with hands-on exercises.</p>
+            </div>
+
+            <div class="feature-card reveal-delay-2">
+                <div class="feature-icon">✨</div>
+                <h3 class="feature-title">Praktické cvičenia</h3>
+                <p class="feature-desc">Real-world practice with detailed feedback.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- === BENEFITS SECTION --> -->
+    <section id="benefits" class="benefits">
+        <div class="section-header reveal">
+            <span class="section-label">Výhody kurzu</span>
+            <h2 class="section-title">Prečo tento kurz?</h2>
+        </div>
+
+        <div class="benefits-grid">
+            <div class="benefit-card checked reveal-delay-1">
+                <span class="benefit-icon">✓</span>
+                <h3 class="benefit-title">Komplexný obsah</h3>
+                <p class="benefit-desc">Všetko čo potrebuješ vedieť - od základov až po pokročilé techniky.</p>
+            </div>
+
+            <div class="benefit-card checked reveal-delay-2">
+                <span class="benefit-icon">✓</span>
+                <h3 class="benefit-title">Praktické cvičenia</h3>
+                <p class="benefit-desc">Interaktívne úlohy s podrobnou spätnou väzbou od expertov.</p>
+            </div>
+
+            <div class="benefit-card checked reveal-delay-2">
+                <span class="benefit-icon">✓</span>
+                <h3 class="benefit-title">Príprava na certifikáciu</h3>
+                <p class="benefit-desc">Kompletná príprava na získanie medzinárodného certifikátu.</p>
+            </div>
+
+            <div class="benefit-card checked reveal-delay-2">
+                <span class="benefit-icon">✓</span>
+                <h3 class="benefit-title">Komunita odborníkov</h3>
+                <p class="benefit-desc">Prístup k exkluzívnej komunite lash artistry profesionálov.</p>
+            </div>
+
+            <div class="benefit-card checked reveal-delay-2">
+                <span class="benefit-icon">✓</span>
+                <h3 class="benefit-title">Aktuálne trendy</h3>
+                <p class="benefit-desc">Vždy v čele s poslednými trendmi a inováciami v oblasti mihalníc.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- === E-BOOK SECTION --> -->
+    <section id="ebook" class="ebook-section">
+        <div class="section-header reveal">
+            <span class="section-label">Kariérny rozvoj</span>
+            <h2 class="section-title">Staneš sa profesionálnym lash technikom</h2>
+        </div>
+
+        <div class="ebook-card reveal-delay-1">
+            <div class="ebook-price">€29</div>
+            <h3 class="ebook-title">Vedomostný test a e-knihy balíček</h3>
+            
+            <ul class="ebook-features">
+                <li>Vedomostný test po ukončení kurzu</li>
+                <li>2 e-knihy o budovaní kariéry</li>
+                <li>Praktické tipy a triky od expertov</li>
+                <li>Exkluzívny prístup k komunite</li>
+            </ul>
+
+            <a href="#" class="btn-luxury">Získaj teraz</a>
+        </div>
+    </section>
+
+    <!-- === FAQ SECTION --> -->
+    <section id="faq" class="about">
+        <div class="section-header">
+            <span class="section-label reveal">Časté otázky</span>
+            <h2 class="section-title reveal-delay-1">FAQ</h2>
+        </div>
+
+        <div style="max-width: 800px; margin: 0 auto; padding: 0 var(--space-lg);">
+            <details class="faq-item reveal" style="
+                background: var(--glass-bg); 
+                border: 1px solid var(--glass-border);
+                backdrop-filter: blur(8px);
+                margin-bottom: 1rem;
+                padding: 1.5rem;
+                border-radius: 12px;
+            " onclick="toggleAccordion(this)">
+                <summary style="cursor: pointer; font-weight: 600;">Kto je kurz určený?</summary>
+                <p style="margin-top: 1rem; color: var(--text-muted);">
+                    Kurz je navrhnutý pre pokročilých technikov, ktorí už majú základy a chcú sa posunúť na vyššiu úroveň.
+                </p>
+            </details>
+
+            <details class="faq-item" style="
+                background: var(--glass-bg); 
+                border: 1px solid var(--glass-border);
+                backdrop-filter: blur(8px);
+                margin-bottom: 1rem;
+                padding: 1.5rem;
+                border-radius: 12px;
+            " onclick="toggleAccordion(this)">
+                <summary style="cursor: pointer; font-weight: 600;">Ktoré techniky sa naučím?</summary>
+                <p style="margin-top: 1rem; color: var(--text-muted);">
+                    Naučíte sa všetky základné a pokročilé techniky vrátane classic, hybrid, volume, mega volume lashes.
+                </p>
+            </details>
+
+            <details class="faq-item" style="
+                background: var(--glass-bg); 
+                border: 1px solid var(--glass-border);
+                backdrop-filter: blur(8px);
+                margin-bottom: 1rem;
+                padding: 1.5rem;
+                border-radius: 12px;
+            " onclick="toggleAccordion(this)">
+                <summary style="cursor: pointer; font-weight: 600;">Ako dlho trvá kurz?</summary>
+                <p style="margin-top: 1rem; color: var(--text-muted);">
+                    Kurz môžete absolvovať vo vlastnom tempe a dĺžka závisí od vašich cieli a tempa učenia sa.
+                </p>
+            </details>
+
+            <details class="faq-item" style="
+                background: var(--glass-bg); 
+                border: 1px solid var(--glass-border);
+                backdrop-filter: blur(8px);
+                margin-bottom: 1rem;
+                padding: 1.5rem;
+                border-radius: 12px;
+            " onclick="toggleAccordion(this)">
+                <summary style="cursor: pointer; font-weight: 600;">Získam certifikát?</summary>
+                <p style="margin-top: 1rem; color: var(--text-muted);">
+                    Áno, po úspešnom ukončení kurzu a vyhotovení vedomostného testu získate medzinárodný certifikát.
+                </p>
+            </details>
+        </div>
+    </section>
+
+    <!-- === CONTACT SECTION --> -->
+    <section id="contact" class="about">
+        <div class="section-header">
+            <span class="section-label reveal">Kontakt</span>
+            <h2 class="section-title reveal-delay-1">Máte otázky?</h2>
+        </div>
+
+        <div style="max-width: 600px; margin: 0 auto; padding: 0 var(--space-lg);">
+            <form style="display: flex; flex-direction: column; gap: 1rem;">
+                <input type="text" placeholder="Vaše meno" style="
+                    padding: 1rem;
+                    background: var(--glass-bg);
+                    border: 1px solid var(--glass-border);
+                    backdrop-filter: blur(8px);
+                    border-radius: 8px;
+                    color: var(--text-primary);
+                    font-family: 'Inter', sans-serif;
+                " />
+
+                <input type="email" placeholder="Váš email" style="
+                    padding: 1rem;
+                    background: var(--glass-bg);
+                    border: 1px solid var(--glass-border);
+                    backdrop-filter: blur(8px);
+                    border-radius: 8px;
+                    color: var(--text-primary);
+                    font-family: 'Inter', sans-serif;
+                " />
+
+                <textarea rows="5" placeholder="Vaša správa" style="
+                    padding: 1rem;
+                    background: var(--glass-bg);
+                    border: 1px solid var(--glass-border);
+                    backdrop-filter: blur(8px);
+                    border-radius: 8px;
+                    color: var(--text-primary);
+                    font-family: 'Inter', sans-serif;
+                    resize: vertical;
+                " />
+
+                <button type="submit" class="btn-luxury">Odoslať správu</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- === FOOTER --> -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Mihalnice Masterclass</h4>
+                <p style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.6;">
+                    Premium online kurz o predlžovaní mihalníc pre profesionálov.
+                </p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Kurz</h4>
+                <ul>
+                    <li><a href="#about">Obsah kurzu</a></li>
+                    <li><a href="#benefits">Výhody</a></li>
+                    <li><a href="#ebook">Kariéra</a></li>
                 </ul>
-                
-                <a href="#contact" class="btn-luxury btn-large">Objednať E-book Teraz →</a>
+            </div>
+
+            <div class="footer-section">
+                <h4>Podpora</h4>
+                <ul>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact">Kontakt</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Zakladné práva</h4>
+                <ul>
+                    <li><a href="#">Obchodné podmienky</a></li>
+                    <li><a href="#">Ochrana osobných údajov</a></li>
+                </ul>
             </div>
         </div>
-        
-        <p class="text-center mt-4">✓ Bezplatný prístup do komunity  študentov<br>✓ Možnosť ďalšieho vzdelávania</p>
-    </div>
-</section></section>
-<section id="about" class="about-section fade-up visible">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6">
-                <h2 class="luxury-section-title">Staneš sa Profesionálnym Lash Artistom</h2>
-                <div class="benefits-grid">
-                    <div class="benefit-card luxury-border fade-up">
-                        <div class="benefit-icon">🎓</div>
-                        <h3>Online kurz</h3>
-                        <ul>
-                            <li>✓ 87+ hodín kvalitného videoučenia</li>
-                            <li>✓ Komplexný program od začiatku</li>
-                            <li>✓ Teoretická i praktická časť</li>
-                        </ul>
-                    </div>
-                    <div class="benefit-card luxury-border fade-up">
-                        <div class="benefit-icon">🎯</div>
-                        <h3>Živý mentoring</h3>
-                        <ul>
-                            <li>✓ Priamy kontakt s expertkou</li>
-                            <li>✓ Individuálne rady a tipy</li>
-                            <li>✓ Rýchla spätná väzba</li>
-                        </ul>
-                    </div>
-                    <div class="benefit-card luxury-border fade-up">
-                        <div class="benefit-icon">📜</div>
-                        <h3>Certifikát</h3>
-                        <ul>
-                            <li>✓ Uznávaný v celej EÚ</li>
-                            <li>✓ Podpísaný certifikát</li>
-                            <li>✓ Možnosť ďalšieho štúdia</li>
-                        </ul>
-                    </div>
-                    <div class="benefit-card luxury-border fade-up">
-                        <div class="benefit-icon">📅</div>
-                        <h3>Flexibilné termíny</h3>
-                        <ul>
-                            <li>✓ Štúdium kedy chceš</li>
-                            <li>✓ Prístup na vždy</li>
-                            <li>✓ Žiadne deadlines</li>
-                        </ul>
-                    </div>
-                    <div class="benefit-card luxury-border fade-up">
-                        <div class="benefit-icon">📦</div>
-                        <h3>Profesionálne materiály</h3>
-                        <ul>
-                            <li>✓ Vysokorozdielne videá</li>
-                            <li>✓ PDF sprievodca</li>
-                            <li>✓ Zoznam dodávateľov</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section> </section>
 
-    <!-- ABOUT COURSE -->
-    <section id="about" class="about-section fade-up visible">
-        <div class="container">
-            <h2 class="section-title-gilded">O KURZE</h2>
-            <p class="about-content">
-                Profesionálny kurz pre lomenie mihalien, ktorý vás naučí všetko od základov až po pokročilé techniky. Získate certifikát, ktorý je uznávaný v celej Európe a môžete začniť pracovať ešte dnes. Našich 15+ študentov už generuje príjem až €2000/mesiac s flexibilitou z domova.
-            </p>
-        </div>
-    </section>
-
-    <!-- COUNTER SECTION WITH FIXED DECIMALS -->
-    <section class="counter-section fade-up visible">
-        <div class="counter-grid">
-            <div class="counter-card">
-                <div class="counter-number" data-target="87" data-counted="0" data-start="0">0</div>
-                <div class="counter-label">Hodín Trvania</div>
-            </div>
-            <div class="counter-card">
-                <div class="counter-number" data-target="15" data-counted="0" data-start="0">0</div>
-                <div class="counter-label">Úspešných Študentov</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- TESTIMONIALS SECTION WITH CLIENT PORTRAITS -->
-    <section id="testimonials" class="testimonials-section fade-up visible">
-        <div class="container">
-            <h2 class="section-title-gilded">SVEDOCKETSTVIA</h2>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="client-image-placeholder">👩‍💼</div>
-                    <p class="testimonial-text">"Zmena mého života! Kurz som ukončila za 6 týždňov a teraz pracujem ako freelancér. Prvý klient prišiel už cez 2 mesiace!" - Martina, Praha</p>
-                    <p class="client-name">Martina Nováková</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="client-image-placeholder">👩‍💼</div>
-                    <p class="testimonial-text">"Najlepší kurz, ktorý som absolvovala. Podpora je neuvěřitelná a učia vás všetko krok za krokom."</p>
-                    <p class="client-name">Sarah Wilson</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PRICING SECTION WITH LUXURY CARDS -->
-    <section id="pricing" class="pricing-section fade-up visible">
-        <div class="container">
-            <h2 class="section-title-gilded">INVESTÍCIA DO VAŠEJ KARIÉRY</h2>
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <h3 class="pricing-title">Základný Kurz</h3>
-                    <div class="pricing-price">€199</div>
-                    <ul class="pricing-features">
-                        <li>Všetky 87 hodín videí</li>
-                        <li>Certifikát uznávaný v EÚ</li>
-                        <li>Prístup na vždy</li>
-                        <li>Comunity podpora</li>
-                    </ul>
-                    <a href="#contact" class="pricing-btn">Vybrať Teraz</a>
-                </div>
-                <div class="pricing-card premium">
-                    <h3 class="pricing-title">PREMIUM - Odporúčané</h3>
-                    <div class="pricing-price">€299</div>
-                    <ul class="pricing-features">
-                        <li>Všetko zo Základného kurzu</li>
-                        <li>Live mentoring sessions</li>
-                        <li>Priamy prístup ku mentora</li>
-                        <li>Skupinové projektové workshopy</li>
-                    </ul>
-                    <a href="#contact" class="pricing-btn">Vybrať Teraz</a>
-                </div>
-                <div class="pricing-card">
-                    <h3 class="pricing-title">Business Starter</h3>
-                    <div class="pricing-price">€499</div>
-                    <ul class="pricing-features">
-                        <li>Všetko od Premium kurzu</li>
-                        <li>Biznis plán šablóny</li>
-                        <li>Cenník pre vaše služby</li>
-                        <li>Marketingová stratégia</li>
-                    </ul>
-                    <a href="#contact" class="pricing-btn">Vybrať Teraz</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ ACCORDION SECTION -->
-    <section id="faq" class="faq-section fade-up visible">
-        <div class="container">
-            <h2 class="section-title-gilded">ČASTÉ OTÁZKY</h2>
-            <div class="faq-container">
-                <div class="faq-item">
-                    <div class="faq-question">Ako dlho trvá kurz?</div>
-                    <div class="faq-answer">
-                        Kurz obsahuje 87 hodín obsahu, ktoré môžete konzumovať vo vlastnom tempe. Väčšina študentov ho dokončí za 6-8 týždňov pri dennom čase 2-3 hodiny.
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">Potrebujem skúsenosti v make-upe?</div>
-                    <div class="faq-answer">
-                        Nie! Kurz je koncipovaný pre úplných začiatočníkov. Naučíte sa všetky techniky od základov, vrátane makeupových dovedností potrebných pre lash aplikácie.
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">Čo získam po ukončení kurzu?</div>
-                    <div class="faq-answer">
-                        Získate certifikát uznávaný v celej Európe, prístup na privátnu komunitu a všetkými 87 hodinami odborného obsahu. Môžete začniť pracovať okamžite.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA BANNER SECTION -->
-    <section class="cta-banner-section fade-up visible">
-        <div class="cta-banner">
-            <h2>Prihláste sa na očakávaný kurz ešte dnes!</h2>
-            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Miesto je obmedzené pre zabezpečenie kvalitnej podpory.</p>
-            <a href="#contact" class="cta-button cta-button-primary">Získajte Prémiovú Edukáciu Teraz</a>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="footer-gilded fade-up visible">
-        <p>&copy; 2024 Lash Masterclass. All rights reserved.</p>
-        <div style="margin-top: 1rem;">
-            <a href="#" class="footer-link">Privacy Policy</a> | 
-            <a href="#" class="footer-link">Terms of Service</a> | 
-            <a href="#" class="footer-link">Contact</a>
+        <div class="footer-bottom">
+            &copy; 2026 Mihalnice Masterclass. Všetky práva vyhradené. | Premium Lash Artistry Design by Claude Design
         </div>
     </footer>
 
-    <!-- ANIMATION SCRIPT -->
+    <!-- === SCROLL ANIMATIONS SCRIPT (LAYERS.IO STYLE) === -->
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const toggle = document.querySelector('.mobile-nav-toggle');
+            toggle.classList.toggle('active');
+        }
+
+        // FAQ accordion with smooth collapse
+        function toggleAccordion(detailes) {
+            const summary = detailes.querySelector('summary');
             
-            // Counter animation - FIXED: Round to whole numbers only
-            const counters = document.querySelectorAll('.counter-number');
-            counters.forEach(counter => {
-                const target = Math.round(parseFloat(counter.getAttribute('data-target')));
-                const current = parseFloat(counter.getAttribute('data-counted')) || 0;
-                const start = parseFloat(counter.getAttribute('data-start')) || 0;
-                
-                if (current === 0) {
-                    const increment = target / 50; // Smooth animation in 50 steps
-                    let curr = current;
-                    
-                    const updateCounter = () => {
-                        const step = Math.min(increment, target - curr);
-                        const nextVal = curr + step;
-                        
-                        if (nextVal <= target) {
-                            counter.innerText = Math.round(nextVal).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-                            setTimeout(updateCounter, 20); // Fixed: 20ms for smooth animation
-                        } else {
-                            counter.innerText = target.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-                            counter.removeAttribute('data-counted');
-                        }
-                    };
-                    
-                    updateCounter();
+            // Close other open accordions
+            document.querySelectorAll('.faq-item[open]').forEach(item => {
+                if (item !== detailes) {
+                    item.removeAttribute('open');
                 }
             });
+
+            // Toggle current accordion
+            detailes.open = !detailes.open;
+        }
+
+        // Smooth scroll animations - LAYERS.IO style reveal on scroll
+        function initScrollReveal() {
+            const reveals = document.querySelectorAll('.reveal, .reveal-delay-1, .reveal-delay-2, .reveal-delay-3, .reveal-delay-4');
             
-            // Scroll reveal observer
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.1
+            const revealOptions = {
+                threshold: 0.15,
+                rootMargin: '0px 0px -50px 0px'
             };
-            
-            const observer = new IntersectionObserver((entries, observer) => {
+
+            const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, observerOptions);
-            
-            const fadeElements = document.querySelectorAll('.fade-up');
-            fadeElements.forEach(el => observer.observe(el));
-            
-            // FAQ accordion functionality
-            const faqItems = document.querySelectorAll('.faq-item');
-            faqItems.forEach(item => {
-                const question = item.querySelector('.faq-question');
-
-                // === MOBILE MENU TOGGLE FUNCTIONALITY ===
-                const toggleBtn = document.querySelector('.mobile-nav-toggle');
-                const navContainer = document.querySelector('.nav-menu-container');
-            
-                if (toggleBtn && navContainer) {
-                toggleBtn.addEventListener('click', () => {
-                toggleBtn.classList.toggle('active');
-                    
-                // Toggle menu visibility
-                if (navContainer.style.opacity === '1') {
-                    navContainer.style.opacity = '0';
-                    navContainer.style.visibility = 'hidden';
-                } else {
-                    navContainer.style.opacity = '1';
-                    navContainer.style.visibility = 'visible';
-                }
-                });
-                }
-
-                question.addEventListener('click', () => {
-                    const isActive = item.classList.contains('active');
-                    
-                    // Close all other items
-                    faqItems.forEach(i => {
-                        if (i !== item) {
-                            i.classList.remove('active');
+                        entry.target.classList.add('active');
+                        
+                        // Store animation state for GSAP-like scrubbing
+                        if (entry.target.dataset.animated !== 'true') {
+                            entry.target.dataset.animated = 'true';
+                            
+                            // Add stagger delays based on child count
+                            const children = entry.target.parentElement;
+                            if (children && children.children.length > 1) {
+                                Array.from(children.children).forEach((child, index) => {
+                                    if (child.classList.contains('reveal')) {
+                                        setTimeout(() => {
+                                            child.style.opacity = '0';
+                                            child.style.transform = 'translateY(30px)';
+                                            child.style.transition = 'all 0.6s ease-out';
+                                        }, index * 100);
+                                    }
+                                });
+                            }
                         }
-                    });
-                    
-                    // Toggle current item
-                    if (!isActive) {
-                        item.classList.add('active');
                     }
                 });
+            }, revealOptions);
+
+            reveals.forEach(reveal => {
+                observer.observe(reveal);
+            });
+        }
+
+        // Initialize animations when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initScrollReveal);
+        } else {
+            initScrollReveal();
+        }
+
+        // Smooth scroll for anchor links with fade effect
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+
+                    // Add fade-in effect when scrolling into view
+                    setTimeout(() => {
+                        targetElement.style.opacity = '0';
+                        targetElement.style.transform = 'translateY(20px)';
+                        targetElement.style.transition = 'all 0.5s ease-out';
+                        
+                        requestAnimationFrame(() => {
+                            targetElement.style.opacity = '1';
+                            targetElement.style.transform = 'translateY(0)';
+                        });
+                    }, 100);
+                }
             });
         });
-    </script>
 
+        console.log('🎨 Premium Claude Design + Layers.io animations initialized');
+    </script>
 </body>
 </html>
