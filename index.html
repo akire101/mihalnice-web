@@ -109,9 +109,79 @@
             position: relative;
         }
 
-        .nav-links a:hover, .nav-links a.active { 
+        .nav-links a:hover {
             color: var(--gold-primary) !important;
             text-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+            transform: translateY(-2px) scale(1.01);
+        }
+
+        /* === MOBILE MENU DROPDOWN (HAMBURGER) === */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none !important;
+            }
+
+            .mobile-nav-toggle {
+                display: flex !important;
+                position: relative;
+                z-index: 1002;
+                cursor: pointer;
+                width: 40px;
+                height: 30px;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .mobile-nav-toggle::before {
+                content: '☰';
+                color: var(--text-primary);
+                font-size: 1.5rem;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .mobile-nav-toggle.active::before {
+                content: '✕';
+                color: var(--gold-primary);
+            }
+
+            .nav-menu-container {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: rgba(15, 15, 15, 0.98);
+                backdrop-filter: blur(20px);
+                padding: var(--space-md);
+                max-height: 80vh;
+                overflow-y: auto;
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(-20px);
+                transition: all 0.4s ease;
+                z-index: 999;
+            }
+
+            .mobile-nav-toggle.active ~ .nav-menu-container {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
+
+            .nav-menu-container nav ul {
+                list-style: none;
+                padding: 0;
+            }
+
+            .nav-menu-container nav li {
+                margin: 0.8rem 0;
+            }
+
+            .nav-menu-container nav a {
+                font-size: 1.1rem !important;
+                padding: 0.5rem 1rem !important;
+            }
         }
 
         .btn-luxury {
@@ -146,7 +216,7 @@
             position: relative;
             padding-top: 120px;
             background: linear-gradient(rgba(15, 15, 15, 0.7), rgba(26, 26, 26, 0.8)),
-                        url('https://images.unsplash.com/photo-1515377905703-c4ba8dabd90i?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+                        url('https://images.unsplash.com/photo-1522383226663-b24a2035bc65?w=1920&q=80&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -605,7 +675,126 @@
             transform: translateY(0);
         }
 
-    </style>
+    
+        /* === BENEFIT CARDS STYLING === */
+        .benefit-card {
+            position: relative;
+            padding: 3rem 2rem;
+            background: rgba(40, 40, 40, 0.6);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: var(--radius-lg);
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            height: 100%;
+            min-height: 280px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .benefit-card:hover {
+            background: rgba(45, 45, 45, 0.9);
+            border-color: var(--gold-primary);
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 12px 30px rgba(212, 175, 55, 0.15);
+        }
+
+        .benefit-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+            transition: all 0.4s ease;
+        }
+
+        .benefit-card:hover .benefit-icon {
+            transform: scale(1.15) rotate(5deg);
+        }
+
+        .benefit-card h3 {
+            font-size: 1.6rem;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+
+        .benefit-card ul {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+            margin-top: auto;
+        }
+
+        .benefit-card li {
+            position: relative;
+            padding-left: 1.8rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .benefit-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0.3rem;
+            color: var(--gold-primary);
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        /* === INVESTICIA SECTION STYLING === */
+        .investicia-sekcia {
+            padding: 8rem 0;
+            background: rgba(20, 20, 20, 0.3);
+        }
+
+        .premium-badge {
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            background: linear-gradient(135deg, var(--gold-primary), #b8860b);
+            color: #1a1a1a;
+            font-weight: 700;
+            font-size: 0.75rem;
+            padding: 0.4rem 0.8rem;
+            border-radius: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+        }
+
+        .pricing-description {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.7;
+            max-width: 400px;
+            margin: 0 auto 2rem;
+        }
+
+        /* === RESPONSIVE BENEFITS GRID === */
+        @media (max-width: 768px) {
+            .benefits-grid {
+                grid-template-columns: 1fr !important;
+            }
+            
+            .benefit-card {
+                min-height: 300px !important;
+                padding: 2.5rem 1.5rem;
+            }
+
+            .benefit-icon {
+                font-size: 2.8rem !important;
+            }
+
+            .benefit-card h3 {
+                font-size: 1.4rem !important;
+            }
+
+            .benefit-card li {
+                font-size: 0.9rem !important;
+            }
+        }
+</style>
 </head>
 <body>
 
@@ -624,16 +813,92 @@
     </nav>
 
     <!-- HERO SECTION WITH COVER IMAGE -->
-    <section class="hero-section fade-up visible">
-        <div class="hero-content">
-            <h1 class="hero-title">💎 Staneš sa<br>Profesionálnym Lash Artistom</h1>
-            <p class="hero-subtitle">Ovládni najnovšie techniky lomenia mihalien za 87 hodín. Získa certifikát medzinárodnej úrovne a začni generovať príjem z domu.</p>
-            <div class="hero-buttons">
-                <a href="#pricing" class="cta-button cta-button-primary">Získajte Prémiovú Edukáciu</a>
-                <a href="#about" class="cta-button cta-button-secondary">Prečítať Viac</a>
+    </section>
+<section id="pricing" class="investicia-sekcia fade-up visible">
+    <div class="container">
+        <h2 class="luxury-section-title text-center">Investícia do Vašej Kariéry</h2>
+        <p class="text-center luxury-subtitle">Získajte odborné znalosti už dnes - iba jedna položka</p>
+        
+        <div class="pricing-container">
+            <div class="pricing-card premium fade-up visible">
+                <div class="premium-badge">Best Value</div>
+                <h3>E-book: "Lash Artist Mastery"</h3>
+                <div class="pricing-price">€29</div>
+                <p class="pricing-description">Kompletný digitálny sprievodca naštartovať svoju lash kariéru</p>
+                
+                <ul class="pricing-features">
+                    <li>✓ 87+ hodín videoučenia</li>
+                    <li>✓ Uznávaný certifikát v EÚ</li>
+                    <li>✓ Živý mentoring s expertkou</li>
+                    <li>✓ Prístup na vždy</li>
+                    <li>✓ Profesionálne PDF materiály</li>
+                    <li>✓ Zoznam spoľahlivých dodávateľov</li>
+                    <li>✓ Sprievodný online slovníček</li>
+                </ul>
+                
+                <a href="#contact" class="btn-luxury btn-large">Objednať E-book Teraz →</a>
             </div>
         </div>
-    </section>
+        
+        <p class="text-center mt-4">✓ Bezplatný prístup do komunity  študentov<br>✓ Možnosť ďalšieho vzdelávania</p>
+    </div>
+</section></section>
+<section id="about" class="about-section fade-up visible">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <h2 class="luxury-section-title">Staneš sa Profesionálnym Lash Artistom</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-card luxury-border fade-up">
+                        <div class="benefit-icon">🎓</div>
+                        <h3>Online kurz</h3>
+                        <ul>
+                            <li>✓ 87+ hodín kvalitného videoučenia</li>
+                            <li>✓ Komplexný program od začiatku</li>
+                            <li>✓ Teoretická i praktická časť</li>
+                        </ul>
+                    </div>
+                    <div class="benefit-card luxury-border fade-up">
+                        <div class="benefit-icon">🎯</div>
+                        <h3>Živý mentoring</h3>
+                        <ul>
+                            <li>✓ Priamy kontakt s expertkou</li>
+                            <li>✓ Individuálne rady a tipy</li>
+                            <li>✓ Rýchla spätná väzba</li>
+                        </ul>
+                    </div>
+                    <div class="benefit-card luxury-border fade-up">
+                        <div class="benefit-icon">📜</div>
+                        <h3>Certifikát</h3>
+                        <ul>
+                            <li>✓ Uznávaný v celej EÚ</li>
+                            <li>✓ Podpísaný certifikát</li>
+                            <li>✓ Možnosť ďalšieho štúdia</li>
+                        </ul>
+                    </div>
+                    <div class="benefit-card luxury-border fade-up">
+                        <div class="benefit-icon">📅</div>
+                        <h3>Flexibilné termíny</h3>
+                        <ul>
+                            <li>✓ Štúdium kedy chceš</li>
+                            <li>✓ Prístup na vždy</li>
+                            <li>✓ Žiadne deadlines</li>
+                        </ul>
+                    </div>
+                    <div class="benefit-card luxury-border fade-up">
+                        <div class="benefit-icon">📦</div>
+                        <h3>Profesionálne materiály</h3>
+                        <ul>
+                            <li>✓ Vysokorozdielne videá</li>
+                            <li>✓ PDF sprievodca</li>
+                            <li>✓ Zoznam dodávateľov</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> </section>
 
     <!-- ABOUT COURSE -->
     <section id="about" class="about-section fade-up visible">
@@ -820,6 +1085,26 @@
             const faqItems = document.querySelectorAll('.faq-item');
             faqItems.forEach(item => {
                 const question = item.querySelector('.faq-question');
+
+                // === MOBILE MENU TOGGLE FUNCTIONALITY ===
+                const toggleBtn = document.querySelector('.mobile-nav-toggle');
+                const navContainer = document.querySelector('.nav-menu-container');
+            
+                if (toggleBtn && navContainer) {
+                toggleBtn.addEventListener('click', () => {
+                toggleBtn.classList.toggle('active');
+                    
+                // Toggle menu visibility
+                if (navContainer.style.opacity === '1') {
+                    navContainer.style.opacity = '0';
+                    navContainer.style.visibility = 'hidden';
+                } else {
+                    navContainer.style.opacity = '1';
+                    navContainer.style.visibility = 'visible';
+                }
+                });
+                }
+
                 question.addEventListener('click', () => {
                     const isActive = item.classList.contains('active');
                     
